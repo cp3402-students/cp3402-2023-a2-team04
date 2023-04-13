@@ -11,6 +11,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Create directory != exist
+      run: |
+        if [ ! -d "/temp/wp-content" ]; then
+          mkdir -p /temp/wp-content
+        fi
     - name: Copy files to Droplet
       uses: appleboy/scp-action@master
       with:
@@ -18,4 +23,7 @@ jobs:
         username: ${{ secrets.DROPLET_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "./wp-content"
-        target: "/var/www/html/wp-content"
+        target: "/tmp/wp-content"
+    - name: Copy files to Docker container
+      run: |
+        docker cp /tmp/wp-content cp3402_wordpress_1:/var/www/html/wp-content/
