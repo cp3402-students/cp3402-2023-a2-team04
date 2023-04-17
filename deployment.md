@@ -14,7 +14,7 @@ Discord
 Branch name: development
 
 #### Step 1: Initialise with Docker Compose and Git
-1. Select an empty folder and copy the docker-compose file from the GitHub repo <br> _(If required make a text document
+1. Select an empty folder and copy the docker-compose file from below <br> _(If required make a text document
    called docker-compose.yml and copy in the raw text from the repos docker-compose_
 2. Open your command line
 3. `cd <path-to-docker-compose-file>`
@@ -30,6 +30,54 @@ Branch name: development
 11. `git log` to view the latest commits
 12. If your log doesn't appear to be update-to-date`git fetch` `git pull` update with the latest if required
 13. `git checkout -b <new-branch-name>` Create a new branch to work on
+
+##### Docker Compose File
+```
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:6.2
+    container_name: wordpress
+    restart: always
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - ./wordpress_data:/var/www/html
+    ports:
+      - "8000:80"
+
+  phpmyadmin:
+    image: phpmyadmin:5.2
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: wordpress
+
+volumes:
+  mysql-data:
+```
 
 #### Step 2: Setup Browser
 1. Go to browser and type localhost:8000 to get to WordPress install page
