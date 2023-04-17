@@ -88,7 +88,7 @@ volumes:
 6. Create a new browser tab and type localhost:8080 to get PHPMyAdmin login page
 7. Use credentials for database from docker compose file
 
-#### Development of the theme
+#### Step 3: Development of the theme
 1. Open PHPStorm
 2. File > Open
 3. Select the wordpress-data folder created by the docker compose
