@@ -1,0 +1,4 @@
+docker-compose.yml
+node_modules
+db_data
+.idea
