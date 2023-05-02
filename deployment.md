@@ -48,7 +48,7 @@ Branch name: development
    creation
 6. Note the path for the themes folder that was created by docker compose
 7. `cd <path-to-themes-folder>`
-8. `git clone https://github.com/cp3402-students/cp3402-2023-a2-team04`
+8. `git clone https://github.com/cp3402-students/cp3402-2023-a2-team04.git`
 9. `git branch` check which branch you are on, we only want to deal with development `git branch -a` to show all
    branches
 10. `git checkout <branch-name>` to switch to the development branch
@@ -114,7 +114,7 @@ volumes:
 #### Step 3: Development of the theme
 1. Open PHPStorm
 2. File > Open
-3. Select the wordpress-data folder created by the docker compose
+3. Select the wp-content directory created by the docker compose
 4. Make changes to theme as desired
 5. Throughout development go back to command line and `git add .` to add all changed files OR use PHPStorm Commit
    section to add files and create commits
