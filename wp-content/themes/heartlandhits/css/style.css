@@ -126,6 +126,7 @@ a {
  */
 abbr[title] {
   border-bottom: none;
+  text-decoration: underline;
   text-decoration: underline dotted;
 }
 
@@ -672,9 +673,9 @@ textarea {
     display: flex;
   }
 }
-.site-main.comment-navigation,
-.site-main.posts-navigation,
-.site-main.post-navigation {
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
   margin: 0 0 1.5em;
 }
 .comment-navigation .nav-links,
