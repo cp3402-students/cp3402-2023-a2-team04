@@ -1,6 +1,7 @@
 # Development and Deployment Workflow
 
 ## Summary of Tools Used
+
 * CMS - `WordPress`
 * Documentation and Team Management - `Trello`
 * Communication - `Discord`
@@ -9,20 +10,22 @@
 
 ## CMS - WordPress
 
-
 ## Documentation and Team Management - Trello
+
 Trello, a web-based list making application. We used it to keep track of tasks and the projects progress.
 
-A new Trello account can be registered with any email. Then you can join the existing board using this link: https://trello.com/b/KYotjzhS/workflow. All previous tasks, completed or otherwise, will be displayed in the board. Anyone new coming to work on and continue developing the site can follow it as a reference point.
+A new Trello account can be registered with any email. Then you can join the existing board using this link: [https://trello.com/b/KYotjzhS/workflow](https://trello.com/b/KYotjzhS/workflow). All previous tasks, completed or otherwise, will be displayed in the board. Anyone new coming to work on and continue developing the site can follow it as a reference point.
 
 ## Communication - Discord
-Discord is a fantastic tool for communication, especially within teams, and as all the team members had experience using it before it was picked for this project. The primary benefits it offers towards a team-orientated project such as this; 
- - It's simple to setup and manage
- - Offers both written and voice communication for multiple users
- - Screen-sharing
- - File and link uploads
- - Offers the basic group requirement of being able to stay up-to-date with the projects development remotely
- - It can be used on phones, computers, and tablets
+
+Discord is a fantastic tool for communication, especially within teams, and as all the team members had experience using it before it was picked for this project. The primary benefits it offers towards a team-orientated project such as this;
+
+* It's simple to setup and manage
+* Offers both written and voice communication for multiple users
+* Screen-sharing
+* File and link uploads
+* Offers the basic group requirement of being able to stay up-to-date with the projects development remotely
+* It can be used on phones, computers, and tablets
 
 Setup is very simple. It simply requires an email to register a new account.
 
@@ -31,16 +34,19 @@ Some discord servers employ a phone verification security system to be able to j
 ## Local Environments - Docker
 
 ## Version Control - GitHub
+
 Version control was done through GitHub. Multiple branches were used, primarily Main, Staging, and Development.
 
 The workflow for a member to commit a change to the project, would go as follows; Create a new branch, commit changes to it and then merge it with the development branch. Before the merge would be accepted it would need to be reviewed by other members in the pull request.
 
 ### Set up for version control with local environment
+
 Branch name: development
 
 #### Step 1: Initialise with Docker Compose and Git
-1. Select an empty folder and copy the docker-compose file from below <br> _(If required make a text document
-   called docker-compose.yml and copy in the raw text from the repos docker-compose_
+
+1. Select an empty folder and copy the docker-compose file from below _(If required make a text document
+   called docker-compose.yml and copy in the raw text from the repos docker-compose.yml
 2. Open your command line
 3. `cd <path-to-docker-compose-file>`
 4. `docker-compose up`
@@ -48,7 +54,7 @@ Branch name: development
    creation
 6. Note the path for the themes folder that was created by docker compose
 7. `cd <path-to-themes-folder>`
-8. `git clone https://github.com/cp3402-students/cp3402-2023-a2-team04`
+8. `git clone https://github.com/cp3402-students/cp3402-2023-a2-team04.git`
 9. `git branch` check which branch you are on, we only want to deal with development `git branch -a` to show all
    branches
 10. `git checkout <branch-name>` to switch to the development branch
@@ -57,7 +63,8 @@ Branch name: development
 13. `git checkout -b <new-branch-name>` Create a new branch to work on
 
 ##### Docker Compose File
-```
+
+```yml
 version: '3.9'
 
 services:
@@ -104,7 +111,29 @@ volumes:
   mysql-data:
 ```
 
-#### Step 2: Setup Browser
+#### Step 2: Setup Sass and Gulp
+
+```js
+'use strict';
+
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+
+function buildStyles() {
+   return gulp.src('./wordpress-data/wp-content/themes/heartlandhits/sass/**/*.scss')
+           .pipe(sass().on('error', sass.logError))
+           .pipe(gulp.dest('./wordpress-data/wp-content/themes/heartlandhits'));
+}
+
+exports.buildStyles = buildStyles;
+exports.watch = function () {
+   gulp.watch('./wordpress-data/wp-content/themes/heartlandhits/sass/**/*.scss', gulp.series(['buildStyles']));
+};
+```
+
+
+#### Step 3: Setup Browser
+
 1. Go to browser and type localhost:8000 to get to WordPress install page
 2. Set a site name, use the WordPress user and password set up from docker compose, tick box for use of weak password
 3. Select language English (Australia)
@@ -113,7 +142,8 @@ volumes:
 6. Create a new browser tab and type localhost:8080 to get PHPMyAdmin login page
 7. Use credentials for database from docker compose file
 
-#### Step 3: Development of the theme
+#### Step 4: Development of the theme
+
 1. Open PHPStorm
 2. File > Open
 3. Select the wordpress-data folder created by the docker compose
@@ -127,12 +157,15 @@ volumes:
    branch
 
 ### Development Server
+
 GitHub branch name: development
 
 ### Staging Server
+
 GitHub branch name: staging
 
 ### Live Server
+
 GitHub branch name: main
 
 ## Testing
