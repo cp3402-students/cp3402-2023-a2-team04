@@ -126,6 +126,97 @@ volumes:
 9. Depending on development branch rules: 1 reviewer may be required to approve merge, once approved merge and delete
    branch
 
+#### Step 4: Setup Sass
+1. Install [node.js](https://nodejs.org/en)
+2. Place package.json file and gulpfile in the root directory of the project (outside wordpress-data folder)
+3. To activate Package.json file, in project IDE terminal for local install `npm install`
+4. In IDE terminal `npm run watch` to start gulp watch or `npm run sass` for manual compiling
+
+Troubleshooting - Other commands
+* In IDE terminal, `npm install browser-sync`
+* In IDE terminal, `npm install sass gulp-sass --save-dev`
+* Check versions `node --version` `npm --version` `gulp --version`
+
+
+Package.json file
+```
+{
+  "name": "underscores",
+  "version": "1.0.0",
+  "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
+  "author": "Automattic Theme Team",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://github.com/Automattic/_s#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automattic/_s.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Automattic/_s/issues"
+  },
+  "dependencies": {
+    "browser-sync": "^2.29.1",
+    "browsersync": "^0.0.1-security",
+    "sass": "^1.62.1"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^19.2.2",
+    "dir-archiver": "^1.1.1",
+    "rtlcss": "^3.5.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "sass": "gulp buildStyles",
+    "watch": "gulp watch",
+    "compile:rtl": "rtlcss ./css/style.css ./css/style-rtl.css",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "dir-archiver --src ../heartland-hits --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+  },
+  "main": "index.js"
+}
+```
+If necessary change the theme name to suit your folder directory. 
+Gulp file:
+```
+'use strict';
+
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+
+function buildStyles() {
+    return gulp.src('./wordpress-data/wp-content/themes/heartlandhits/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./wordpress-data/wp-content/themes/heartlandhits'));
+}
+
+exports.buildStyles = buildStyles;
+exports.watch = function () {
+    gulp.watch('./wordpress-data/wp-content/themes/heartlandhits/sass/**/*.scss', gulp.series(['buildStyles']));
+};
+```
+
+
+
 ### Development Server
 GitHub branch name: development
 
