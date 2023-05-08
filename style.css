@@ -48,6 +48,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -88,6 +89,7 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  font-family: "Permanent Marker", cursive;
 }
 
 /* Grouping content
@@ -127,6 +129,7 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 /**
@@ -387,7 +390,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
 }
