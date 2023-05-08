@@ -736,6 +736,46 @@ textarea {
   flex: 1 0 50%;
 }
 
+.footer-navigation {
+  display: block;
+  width: 100%;
+}
+.footer-navigation ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.footer-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
+}
+.footer-navigation ul ul ul {
+  left: -999em;
+  top: 0;
+}
+.footer-navigation ul ul li:hover > ul, .footer-navigation ul ul li.focus > ul {
+  display: block;
+  left: auto;
+}
+.footer-navigation ul ul a {
+  width: 200px;
+}
+.footer-navigation ul li:hover > ul,
+.footer-navigation ul li.focus > ul {
+  left: auto;
+}
+.footer-navigation li {
+  position: relative;
+}
+.footer-navigation a {
+  display: block;
+  text-decoration: none;
+}
 /* Site
 --------------------------------------------- */
 /* Header
@@ -820,11 +860,16 @@ textarea {
     width: 40%;
   }
 }
+.menu-toggle {
+  border-radius: 10px;
+}
+
 /* Footer
 --------------------------------------------- */
 .site-footer {
   padding: 1em;
   text-align: center;
+  background-color: #fcb958;
 }
 
 .site-info a {

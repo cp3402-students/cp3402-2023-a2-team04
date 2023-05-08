@@ -12,6 +12,21 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+
+        <!-- Footer Navigation Menu-->
+        <nav class="footer-navigation">
+            <button class="menu-toggle" aria-controls="secondary-menu"
+                    aria-expanded="false"><?php esc_html_e('Footer Menu', 'heartland-hits'); ?></button>
+            <?php
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'secondary',
+                    'menu_id' => 'secondary-menu',
+                )
+            );
+            ?>
+        </nav><!-- #site-navigation -->
+
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'heartland-hits' ) ); ?>">
 				<?php
@@ -25,6 +40,9 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'heartland-hits' ), 'heartland-hits', '<a href="http://underscores.me/">Team 04</a>' );
 				?>
 		</div><!-- .site-info -->
+
+
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

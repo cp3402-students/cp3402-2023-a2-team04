@@ -3,6 +3,7 @@
 .header-image {
   max-height: 60vh;
   overflow: hidden;
+
   img {
     display: block;
     width: 100vw;
@@ -86,5 +87,10 @@
   .site-navigation {
     width: 40%;
   }
+}
+
+// TODO: Go to header php and swap the text for a hamburger icon
+.menu-toggle {
+  border-radius: 10px;
 }
 
