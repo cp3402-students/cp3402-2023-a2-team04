@@ -23,9 +23,9 @@ function heartland_hits_custom_header_setup() {
 			'heartland_hits_custom_header_args',
 			array(
 				'default-image'      => '',
-				'default-text-color' => '000000',
-				'width'              => 1000,
-				'height'             => 250,
+				'default-text-color' => 'fff',
+				'width'              => 2000,
+				'height'             => 850,
 				'flex-height'        => true,
 				'wp-head-callback'   => 'heartland_hits_header_style',
 			)
