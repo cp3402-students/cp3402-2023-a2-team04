@@ -139,7 +139,7 @@ add_action( 'widgets_init', 'heartland_hits_widgets_init' );
  */
 function heartland_hits_scripts() {
 
-    // Google fonts
+    // Google fonts TODO: Fix up enqueue and remove import statement from _typography variables
 //    wp_enqueue_style('heartland-hits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
     // Style

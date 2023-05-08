@@ -388,9 +388,9 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
+  color: #000000;
   font-family: "Open Sans", Verdana, -apple-system, BlinkMacSystemFont, Helvetica, Tahoma, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 1.5;
 }
 
@@ -405,15 +405,15 @@ h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 3em;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1.25em;
 }
 
 h3, h4, h5, h6 {
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
 p {
@@ -471,7 +471,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #fff;
+  background: #ffffff;
 }
 
 hr {
@@ -923,3 +923,4 @@ textarea {
   margin-right: auto;
   margin-bottom: 1.5em;
 }
+/*# sourceMappingURL=maps/style.css.map */

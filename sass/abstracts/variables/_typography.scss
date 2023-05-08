@@ -1,4 +1,4 @@
-// Google fonts - note attempted to add to functions.php enqueue, but unsuccessful
+// Google fonts - TODO: attempted to add to functions.php enqueue, but unsuccessful; works for first google font only
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
 // Typography fonts
@@ -15,8 +15,8 @@ $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
 // Font sizes
-$font__size_heading: 30px;
-$font__size_subheading: 20px;
-$font__size_subheading_lesser: 18px;
-$font__size_body_main: 16px;
-$font__size_body_secondary: 14px;
+$font__size_heading: 3em;  // 30px
+$font__size_subheading: 1.25em;  // 20px
+$font__size_subheading_lesser: 1.125em;  // 18px
+$font__size_body_main: 1em;  // 16px
+$font__size_body_secondary: 0.875em;  // 14px
