@@ -111,72 +111,21 @@
 
 // Footer Navigation
 .footer-navigation {
-  display: block;
-  width: 100%;
 
   ul {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding-left: 0;
+    justify-content: center;
 
-    ul {
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
-      position: absolute;
-      top: 100%;
-      left: -999em;
-      z-index: 99999;
+    a {
+      display: block;
+      padding: 1em;
+      text-decoration: none;
 
-      ul {
-        left: -999em;
-        top: 0;
-      }
-
-      li {
-
-        &:hover > ul,
-        &.focus > ul {
-          display: block;
-          left: auto;
-        }
-      }
-
-      a {
-        width: 200px;
-      }
-
-      :hover > a,
-      .focus > a {
-      }
-
-      a:hover,
-      a.focus {
+      &:hover, &:focus {
+        text-decoration: underline;
       }
     }
 
-    li:hover > ul,
-    li.focus > ul {
-      left: auto;
-    }
-  }
-
-  li {
-    position: relative;
-
-    &:hover > a,
-    &.focus > a {
-    }
-  }
-
-  a {
-    display: block;
-    text-decoration: none;
-  }
-
-  .current_page_item > a,
-  .current-menu-item > a,
-  .current_page_ancestor > a,
-  .current-menu-ancestor > a {
   }
 }

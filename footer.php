@@ -13,21 +13,21 @@
 
 	<footer id="colophon" class="site-footer">
 
-        <!-- Footer Navigation Menu-->
-        <nav class="footer-navigation">
-            <button class="menu-toggle" aria-controls="secondary-menu"
-                    aria-expanded="false"><?php esc_html_e('Footer Menu', 'heartland-hits'); ?></button>
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'secondary',
-                    'menu_id' => 'secondary-menu',
-                )
-            );
-            ?>
-        </nav><!-- #site-navigation -->
-
 		<div class="site-info">
+
+            <!-- Footer Navigation Menu-->
+            <nav class="footer-navigation">
+                <button class="menu-toggle" aria-controls="secondary-menu"
+                        aria-expanded="false"><?php esc_html_e('Footer Menu', 'heartland-hits'); ?></button>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'secondary',
+                    )
+                );
+                ?>
+            </nav><!-- #site-navigation -->
+
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'heartland-hits' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
