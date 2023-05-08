@@ -5,4 +5,17 @@ h4,
 h5,
 h6 {
 	clear: both;
+	font-family: $font__headings;
+}
+
+h1 {
+	font-size: $font__size_heading;
+}
+
+h2 {
+	font-size: $font__size_subheading;
+}
+
+h3, h4, h5, h6 {
+	font-size: $font__size_subheading_lesser;
 }

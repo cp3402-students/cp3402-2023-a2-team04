@@ -1,9 +1,9 @@
 /*!
 Theme Name: Heartland Hits
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
 Author: Team 04
-Author URI: http://underscores.me/
-Description: A theme full of country glow
+Author URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
+Description: A theme full of country glow.
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -48,7 +48,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap");
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -89,7 +89,6 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
-  font-family: "Permanent Marker", cursive;
 }
 
 /* Grouping content
@@ -390,8 +389,8 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen-Sans, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 1rem;
+  font-family: "Open Sans", Verdana, -apple-system, BlinkMacSystemFont, Helvetica, Tahoma, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -402,6 +401,19 @@ h4,
 h5,
 h6 {
   clear: both;
+  font-family: "Kalam", "Fuzzy Bubbles", "Bradley Hand", cursive;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3, h4, h5, h6 {
+  font-size: 18px;
 }
 
 p {
@@ -425,7 +437,7 @@ address {
 
 pre {
   background: #eee;
-  font-family: "Courier 10 Pitch", courier, monospace;
+  font-family: "Ubuntu Mono", "Roboto Mono", monospace;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -526,7 +538,7 @@ a:visited {
   color: #800080;
 }
 a:hover, a:focus, a:active {
-  color: #191970;
+  color: #cd8c48;
 }
 a:focus {
   outline: thin dotted;

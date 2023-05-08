@@ -40,7 +40,7 @@ function heartland_hits_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
-		* Enable support for Post Thumbnails on posts and pages.
+		* Enable support for Post Thumbnails (aka Feature Images) on posts and pages.
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
@@ -138,6 +138,11 @@ add_action( 'widgets_init', 'heartland_hits_widgets_init' );
  * Enqueue scripts and styles.
  */
 function heartland_hits_scripts() {
+
+    // Google fonts
+//    wp_enqueue_style('heartland-hits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+    // Style
 	wp_enqueue_style( 'heartland-hits-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'heartland-hits-style', 'rtl', 'replace' );
 

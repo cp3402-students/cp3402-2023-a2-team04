@@ -10,8 +10,8 @@ $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: #4169e1; //royalblue
 $color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #404040;
+$color__link-hover: $color_tan;
+$color__text-main: $color_black;
 
 $color_white: #ffffff;
 $color_black: #000000;
@@ -19,6 +19,7 @@ $color_maroon: #5f1814;
 $color_beige: #fcb958;
 $color_brown: #4b3025;
 $color_tan: #cd8c48;
+$color_dark_grey: #404040;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
