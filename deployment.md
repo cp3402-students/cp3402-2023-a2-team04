@@ -52,8 +52,8 @@ Branch name: development
 
 #### Step 1: Initialise with Docker Compose and Git
 
-1. Select an empty folder and copy the docker-compose file from below _(If required make a text document
-   called docker-compose.yml and copy in the raw text from the repos docker-compose.yml
+1. Select an empty folder and copy the docker-compose file from below _(Create a yml file
+   called docker-compose.yml and copy in the raw text from code block below)_
 2. Open your command line
 3. `cd <path-to-docker-compose-file>`
 4. `docker-compose up`
