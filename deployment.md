@@ -62,12 +62,13 @@ Branch name: development
 6. Note the path for the themes folder that was created by docker compose
 7. `cd <path-to-themes-folder>`
 8. `git clone https://github.com/cp3402-students/cp3402-2023-a2-team04.git` <theme-name>
-9. `git branch` check which branch you are on, we only want to deal with development `git branch -a` to show all
-   branches
-10. `git checkout <branch-name>` to switch to the development branch
-11. `git log` to view the latest commits
-12. If your log doesn't appear to be update-to-date`git fetch` `git pull` update with the latest if required
-13. `git checkout -b <new-branch-name>` Create a new branch to work on
+9. `cd <path-to-theme-name-folder>`
+10. `git branch` check which branch you are on, we only want to deal with development `git branch -a` to show all
+    branches
+11. `git checkout <branch-name>` to switch to the development branch
+12. `git log` to view the latest commits
+13. If your log doesn't appear to be update-to-date`git fetch` `git pull` update with the latest if required
+14. `git checkout -b <new-branch-name>` Create a new branch to work on
 
 ##### Docker Compose File
 
@@ -126,7 +127,7 @@ volumes:
 4. If not running already, run docker-compose file `docker-compose up`
 5. In IDE terminal `npm run watch` to start gulp watch or `npm run sass` for manual compiling
 
-Troubleshooting - Other commands
+Troubleshooting and Other commands
 
 * In IDE terminal, `npm install browser-sync`
 * In IDE terminal, `npm install sass gulp-sass --save-dev`
