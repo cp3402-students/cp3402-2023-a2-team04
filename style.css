@@ -394,14 +394,10 @@ textarea {
   line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h5, h6, h3, h4, h2, h1 {
   clear: both;
   font-family: "Kalam", "Fuzzy Bubbles", "Bradley Hand", cursive;
+  color: #000000;
 }
 
 h1 {
@@ -409,11 +405,32 @@ h1 {
 }
 
 h2 {
+  font-size: 2.5em;
+  color: #4b3025;
+}
+
+h3, h4 {
+  font-size: 2em;
+}
+
+h3 {
+  color: #cd8c48;
+}
+
+h4 {
+  color: #fcb958;
+}
+
+h5, h6 {
   font-size: 1.25em;
 }
 
-h3, h4, h5, h6 {
-  font-size: 1.125em;
+h5 {
+  color: #cd8c48;
+}
+
+h6 {
+  color: #fcb958;
 }
 
 p {
@@ -709,6 +726,8 @@ textarea {
   flex: 1 0 50%;
 }
 
+/* Global layouts
+--------------------------------------------- */
 /* Posts and pages
 --------------------------------------------- */
 .sticky {

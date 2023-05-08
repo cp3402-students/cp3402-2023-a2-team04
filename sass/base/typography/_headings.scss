@@ -1,21 +1,42 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+%heading {
 	clear: both;
 	font-family: $font__headings;
+	color: $color__heading-very-dark;
 }
 
 h1 {
-	font-size: $font__size_heading;
+	@extend %heading;
+	font-size: $font__size_title;
 }
 
 h2 {
+	@extend %heading;
+	font-size: $font__size_heading;
+	color: $color__heading-dark;
+}
+
+h3, h4 {
+	@extend %heading;
 	font-size: $font__size_subheading;
 }
 
-h3, h4, h5, h6 {
-	font-size: $font__size_subheading_lesser;
+h3 {
+	color: $color__heading-mid;
+}
+
+h4 {
+	color: $color__heading-light;
+}
+
+h5, h6 {
+	@extend %heading;
+	font-size: $font__size_lesser_subheading;
+}
+
+h5 {
+	color: $color__heading-mid;
+}
+
+h6 {
+	color: $color__heading-light;
 }
