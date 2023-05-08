@@ -402,16 +402,16 @@ h5, h6, h3, h4, h2, h1 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 1.5em;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 1.375em;
   color: #4b3025;
 }
 
 h3, h4 {
-  font-size: 2em;
+  font-size: 1.25em;
 }
 
 h3 {
@@ -423,7 +423,7 @@ h4 {
 }
 
 h5, h6 {
-  font-size: 1.25em;
+  font-size: 1.125em;
 }
 
 h5 {
@@ -761,11 +761,26 @@ textarea {
 }
 
 .site-branding {
-  min-height: 65px;
+  min-height: 100px;
+  display: flex;
+}
+
+.custom-logo-link img {
+  margin-right: 3em;
+  display: block;
+  height: 65px;
+  width: auto;
+}
+
+.site-branding-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65px;
 }
 
 .site-title {
-  font-size: 2em;
+  font-size: 1.25em;
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -779,13 +794,12 @@ textarea {
 }
 @media screen and (min-width: 414px) {
   .site-title {
-    font-size: 2.5em;
+    font-size: 1.375em;
   }
 }
 
 .site-description {
   margin: 0;
-  font-size: 2em;
 }
 @media screen and (max-width: 414px) {
   .site-description {
@@ -800,6 +814,7 @@ textarea {
   }
   .site-branding {
     width: 33%;
+    flex: 1 0 auto;
   }
   .site-navigation {
     width: 40%;

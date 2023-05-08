@@ -21,7 +21,24 @@
 }
 
 .site-branding {
-  min-height: 65px;
+  min-height: 100px;
+  display: flex;
+}
+
+.custom-logo-link {
+  img {
+    margin-right: 3em;
+    display: block;
+    height: 65px;
+    width: auto;
+  }
+}
+
+.site-branding-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65px;
 }
 
 // Home Page heading is h1, pages heading is p
@@ -47,7 +64,7 @@
 
 .site-description {
   margin: 0;
-  font-size: $font__size_subheading;
+  //font-size: $font__size_lesser_subheading;
 
   @media screen and (max-width: $query__small) {
     display: none;
@@ -63,9 +80,11 @@
 
   .site-branding {
     width: 33%;
+    flex: 1 0 auto;
   }
 
   .site-navigation {
     width: 40%;
   }
 }
+
