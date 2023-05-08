@@ -61,7 +61,7 @@ Branch name: development
    creation
 6. Note the path for the themes folder that was created by docker compose
 7. `cd <path-to-themes-folder>`
-8. `git clone https://github.com/cp3402-students/cp3402-2023-a2-team04.git`
+8. `git clone https://github.com/cp3402-students/cp3402-2023-a2-team04.git` <theme-name>
 9. `git branch` check which branch you are on, we only want to deal with development `git branch -a` to show all
    branches
 10. `git checkout <branch-name>` to switch to the development branch
