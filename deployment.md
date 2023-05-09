@@ -134,6 +134,12 @@ Troubleshooting and Other commands
 * In IDE terminal, `npm install sass gulp-sass --save-dev`
 * In command line, `npm install -g sass`
 * Check versions `node --version` `npm --version` `gulp --version`
+* In the case of Error: "Script cannot be loaded because running scripts is disabled on this system"
+  To fix this follow the steps below to change your computers Execution Policy:
+  1. Open WIndows Powershell, run it as an Administrator
+  2. Type `Get-ExecutionPolicy` to view the current policy (The policy will likely be set to Restricted by default)
+  3. Type `Set-ExecutionPolicy RemoteSigned`
+  4. Enter `Y` to allow and confirm the change
 
 package.json file:
 
