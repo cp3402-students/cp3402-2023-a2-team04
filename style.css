@@ -513,10 +513,11 @@ body {
 }
 
 hr {
-  background-color: #fcb958;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
+  height: 2px;
+  background-color: #4b3025;
+  background-image: linear-gradient(to right, #4b3025, #fcb958, #4b3025);
+  border: none;
+  margin: 20px 0;
 }
 
 ul,
@@ -1020,6 +1021,18 @@ menu-toggle .material-symbols-outlined {
   background-color: #fff8ee;
   padding-left: 2em;
   font-size: 0.875em;
+}
+
+.reply {
+  margin-bottom: 1em;
+  background-color: #feeed5;
+}
+.reply a {
+  cursor: pointer;
+}
+
+.comment-reply-link {
+  padding: 0 1em;
 }
 
 /* Widgets
