@@ -6,7 +6,6 @@
   @media screen and (min-width: $query__large) {
     position: absolute;
     bottom: 0;
-    //left: 0;
     right: 0;
     width: 60%;
   }
@@ -20,18 +19,25 @@
 
     ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      float: left;
+      //float: left;
       position: absolute;
       top: 100%;
       left: -999em;
       z-index: 99999;
 
       ul {
-        left: -999em;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        //position: static;
+        width: auto;
+        display: block;
+        //left: -999em;
+        left: 0;
         top: 0;
       }
 
       li {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        background-color: lighten($color__heading-mid, 10%);
 
         &:hover > ul,
         &.focus > ul {
@@ -41,7 +47,8 @@
       }
 
       a {
-        width: 200px;
+        width: 100px;
+        max-width: 200px;
       }
 
       :hover > a,
@@ -61,6 +68,7 @@
 
   li {
     position: relative;
+    font-weight: bold;
 
     &:hover > a,
     &.focus > a {
