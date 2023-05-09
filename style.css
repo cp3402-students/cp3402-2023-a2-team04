@@ -765,6 +765,11 @@ textarea {
   display: block;
   width: 100vw;
 }
+@media screen and (max-width: 414px) {
+  .header-image {
+    display: none;
+  }
+}
 
 .site-header {
   position: relative;

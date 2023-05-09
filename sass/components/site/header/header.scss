@@ -8,6 +8,11 @@
     display: block;
     width: 100vw;
   }
+
+  // Hide header image on smaller screens
+  @media screen and (max-width: $query__small){
+    display: none;
+  }
 }
 
 .site-header {
