@@ -31,3 +31,17 @@
   //background-color: green;
 
 }
+
+.reply {
+  margin-bottom: 1em;
+  background-color: lighten($color__table-data, 25%);
+
+  a {
+    cursor: pointer;
+  }
+}
+
+.comment-reply-link {
+  //color: $color__text-highlight;
+  padding: 0 1em;
+}
