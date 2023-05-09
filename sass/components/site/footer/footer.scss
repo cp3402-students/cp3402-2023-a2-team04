@@ -1,0 +1,19 @@
+// Site Footer
+
+.site-footer {
+  position: relative;
+  padding: 1em;
+  text-align: center;
+  background-color: $color__footer-background;
+
+  @media screen and (min-width: $query__small) {
+    padding: 1em 2em;
+  }
+}
+
+.site-info {
+  font-size: $font__size_body_secondary;
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,2 +1,9 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+// Media Query Sizes
+$query__very-small: 360px;  // Small Mobile
+$query__small: 414px;  // Large Mobile
+$query__medium: 601px;  // Tablet
+$query__large: 1280px;  // Tablet/Desktop
+$query__very-large: 1920px;  // Desktop

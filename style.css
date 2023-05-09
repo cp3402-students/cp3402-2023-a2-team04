@@ -1,9 +1,9 @@
 /*!
 Theme Name: Heartland Hits
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
 Author: Team 04
-Author URI: http://underscores.me/
-Description: A theme full of country glow
+Author URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
+Description: A theme full of country glow.
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -33,6 +33,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Links
 	- Forms
 ## Layouts
+    - Global
 # Components
 	- Navigation
 	- Posts and pages
@@ -48,6 +49,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap");
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -127,6 +129,7 @@ a {
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
+  text-decoration: underline dotted;
 }
 
 /**
@@ -386,19 +389,49 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 1rem;
+  color: #000000;
+  font-family: "Open Sans", Verdana, -apple-system, BlinkMacSystemFont, Helvetica, Tahoma, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 1em;
   line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h5, h6, h3, h4, h2, h1 {
   clear: both;
+  font-family: "Kalam", "Fuzzy Bubbles", "Bradley Hand", cursive;
+  color: #000000;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.375em;
+  color: #4b3025;
+}
+
+h3, h4 {
+  font-size: 1.25em;
+}
+
+h3 {
+  color: #cd8c48;
+}
+
+h4 {
+  color: #fcb958;
+}
+
+h5, h6 {
+  font-size: 1.125em;
+}
+
+h5 {
+  color: #cd8c48;
+}
+
+h6 {
+  color: #fcb958;
 }
 
 p {
@@ -422,7 +455,7 @@ address {
 
 pre {
   background: #eee;
-  font-family: "Courier 10 Pitch", courier, monospace;
+  font-family: "Ubuntu Mono", "Roboto Mono", monospace;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -456,7 +489,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #fff;
+  background: #ffffff;
 }
 
 hr {
@@ -506,7 +539,7 @@ img {
 }
 
 figure {
-  margin: 1em 0;
+  margin: 0;
 }
 
 table {
@@ -523,7 +556,7 @@ a:visited {
   color: #800080;
 }
 a:hover, a:focus, a:active {
-  color: #191970;
+  color: #cd8c48;
 }
 a:focus {
   outline: thin dotted;
@@ -613,6 +646,15 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.widget-area, .site-main {
+  padding: 1em;
+}
+@media screen and (min-width: 414px) {
+  .widget-area, .site-main {
+    padding: 2em;
+  }
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -627,6 +669,7 @@ textarea {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  justify-content: center;
 }
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -657,6 +700,7 @@ textarea {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding: 0 0.2em;
 }
 /* Small menu. */
 .menu-toggle,
@@ -692,6 +736,146 @@ textarea {
 .post-navigation .nav-next {
   text-align: end;
   flex: 1 0 50%;
+}
+
+.footer-navigation ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.footer-navigation ul a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+}
+.footer-navigation ul a:hover {
+  text-decoration: underline;
+}
+
+/* Site
+--------------------------------------------- */
+/* Header
+--------------------------------------------- */
+.header-image {
+  max-height: 60vh;
+  overflow: hidden;
+}
+.header-image img {
+  display: block;
+  width: 100vw;
+}
+@media screen and (max-width: 414px) {
+  .header-image {
+    display: none;
+  }
+}
+
+.site-header {
+  position: relative;
+  padding: 1em;
+  background-color: #cd8c48;
+}
+@media screen and (min-width: 414px) {
+  .site-header {
+    padding: 1em 2em;
+  }
+}
+
+.site-branding {
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.site-branding .custom-logo-link {
+  margin-right: 1em;
+}
+.site-branding .custom-logo-link img {
+  height: 100px;
+  width: auto;
+}
+.site-branding .custom-logo-link .site-branding-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+}
+@media screen and (min-width: 414px) {
+  .site-branding .custom-logo-link {
+    margin-right: 1em;
+  }
+}
+
+.site-title {
+  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.site-title a {
+  text-decoration: none;
+  color: #4b3025;
+}
+.site-title a:hover, .site-title a:focus {
+  color: #fcb958;
+}
+@media screen and (min-width: 414px) {
+  .site-title {
+    font-size: 1.375em;
+  }
+}
+
+.site-description {
+  margin: 0;
+  font-size: 1.125em;
+  padding: 0;
+}
+@media screen and (max-width: 414px) {
+  .site-description {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .site-branding {
+    width: 33%;
+    flex: 1 0 auto;
+  }
+  .site-navigation {
+    width: 40%;
+  }
+}
+.menu-toggle {
+  border-radius: 10px;
+  margin-left: auto;
+}
+
+/* Footer
+--------------------------------------------- */
+.site-footer {
+  position: relative;
+  padding: 1em;
+  text-align: center;
+  background-color: #fcb958;
+}
+@media screen and (min-width: 414px) {
+  .site-footer {
+    padding: 1em 2em;
+  }
+}
+
+.site-info {
+  font-size: 0.875em;
+}
+.site-info a {
+  text-decoration: none;
 }
 
 /* Posts and pages
@@ -908,3 +1092,4 @@ textarea {
   margin-right: auto;
   margin-bottom: 1.5em;
 }
+/*# sourceMappingURL=maps/style.css.map */

@@ -1,9 +1,9 @@
 /*!
 Theme Name: Heartland Hits
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
 Author: Team 04
-Author URI: http://underscores.me/
-Description: A theme full of country glow
+Author URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
+Description: A theme full of country glow.
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -34,6 +34,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Links
 	- Forms
 ## Layouts
+    - Global
 # Components
 	- Navigation
 	- Posts and pages
@@ -73,6 +74,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+@import "./layouts/global";
 // @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
 // @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
 

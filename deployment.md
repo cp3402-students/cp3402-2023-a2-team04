@@ -52,8 +52,8 @@ Branch name: development
 
 #### Step 1: Initialise with Docker Compose and Git
 
-1. Select an empty folder and copy the docker-compose file from below _(If required make a text document
-   called docker-compose.yml and copy in the raw text from the repos docker-compose.yml
+1. Select an empty folder and copy the docker-compose file from below _(Create a yml file
+   called docker-compose.yml and copy in the raw text from code block below)_
 2. Open your command line
 3. `cd <path-to-docker-compose-file>`
 4. `docker-compose up`
@@ -126,6 +126,7 @@ volumes:
 3. To activate package.json file, in project IDE terminal for local install `npm install`
 4. If not running already, run docker-compose file `docker-compose up`
 5. In IDE terminal `npm run watch` to start gulp watch or `npm run sass` for manual compiling
+6. Go to browser inspector, settings and enable CSS sourcemaps
 
 Troubleshooting and Other commands
 
@@ -165,6 +166,7 @@ package.json file:
     "rtlcss": "^3.5.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-sass": "^5.1.0"
   },
   "rtlcssConfig": {
@@ -202,10 +204,13 @@ Gulp file:
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
+const sourcemaps = require('gulp-sourcemaps');
 
 function buildStyles() {
     return gulp.src('./wordpress_data/wp-content/themes/heartlandhits/sass/**/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(browserSync.stream()) // Reload browser
         .pipe(gulp.dest('./wordpress_data/wp-content/themes/heartlandhits'))
 }

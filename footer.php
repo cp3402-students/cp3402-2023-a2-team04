@@ -13,6 +13,18 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
+
+            <!-- Footer Navigation Menu-->
+            <nav class="footer-navigation">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'secondary',
+                    )
+                );
+                ?>
+            </nav><!-- #site-navigation -->
+
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'heartland-hits' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */

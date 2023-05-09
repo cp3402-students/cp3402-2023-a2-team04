@@ -9,3 +9,22 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+// Adds a gradient of two colours
+@mixin gradient($startColor, $endColor) {
+	background: linear-gradient($startColor, $endColor);
+}
+
+//// Responsive font  TODO: Apply these to headings and typography - be careful of order of imports
+//@mixin font-size($size: 1) {
+//	font-size: $size * 1em;
+//	@media (min-width: $query__small) {
+//		font-size: $size * 1.2em;
+//	}
+//	@media (min-width: $query__medium) {
+//		font-size: $size * 1.4em;
+//	}
+//	@media (min-width: $query__large) {
+//		font-size: $size * 1.6em;
+//	}
+//}
