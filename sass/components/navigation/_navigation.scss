@@ -1,6 +1,15 @@
 .main-navigation {
   display: block;
   width: 100%;
+  padding: 1em 0;
+
+  @media screen and (min-width: $query__large) {
+    position: absolute;
+    bottom: 0;
+    //left: 0;
+    right: 0;
+    width: 60%;
+  }
 
   ul {
     display: none;
@@ -72,9 +81,19 @@
 }
 
 /* Small menu. */
+menu-toggle {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 37.5em) {

@@ -1,4 +1,20 @@
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+
+	th {
+		background-color: $color__table-header-background;
+		color: $color__table-header-text;
+		padding: 0 0.5em;
+	}
+
+	td {
+		background-color: lighten($color__table-data, 30%);
+		border: 2px solid $color_white;
+		padding: 0 0.5em;
+	}
+
+	a {
+		text-decoration: none;
+	}
 }
