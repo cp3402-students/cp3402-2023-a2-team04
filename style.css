@@ -708,7 +708,7 @@ textarea {
 .main-navigation {
   display: block;
   width: 100%;
-  padding: 1em 0;
+  padding: 0.2em 0;
 }
 @media screen and (min-width: 1280px) {
   .main-navigation {
@@ -742,6 +742,7 @@ textarea {
 .main-navigation ul ul li {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   background-color: #d8a570;
+  position: relative;
 }
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   display: block;
@@ -765,7 +766,7 @@ textarea {
   padding: 0 0.2em;
 }
 /* Small menu. */
-menu-toggle .material-symbols-outlined {
+.menu-toggle .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
