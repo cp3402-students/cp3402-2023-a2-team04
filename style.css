@@ -700,6 +700,7 @@ textarea {
 .main-navigation a {
   display: block;
   text-decoration: none;
+  padding: 0 0.2em;
 }
 /* Small menu. */
 .menu-toggle,
