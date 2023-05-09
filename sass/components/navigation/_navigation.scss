@@ -1,7 +1,7 @@
 .main-navigation {
   display: block;
   width: 100%;
-  padding: 1em 0;
+  padding: 0.2em 0;
 
   @media screen and (min-width: $query__large) {
     position: absolute;
@@ -19,7 +19,6 @@
 
     ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-      //float: left;
       position: absolute;
       top: 100%;
       left: -999em;
@@ -27,10 +26,8 @@
 
       ul {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-        //position: static;
         width: auto;
         display: block;
-        //left: -999em;
         left: 0;
         top: 0;
       }
@@ -38,13 +35,14 @@
       li {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
         background-color: lighten($color__heading-mid, 10%);
+        position: relative;
 
         &:hover > ul,
         &.focus > ul {
           display: block;
           left: auto;
         }
-      }
+    }
 
       a {
         width: 100px;
@@ -89,7 +87,7 @@
 }
 
 /* Small menu. */
-menu-toggle {
+.menu-toggle {
   .material-symbols-outlined {
     font-variation-settings: 'FILL' 0,
     'wght' 400,
