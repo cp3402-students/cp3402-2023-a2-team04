@@ -601,7 +601,7 @@ a:visited {
   color: #800080;
 }
 a:hover, a:focus, a:active {
-  color: #cd8c48;
+  color: #5f1814;
 }
 a:focus {
   outline: thin dotted;
@@ -727,22 +727,29 @@ textarea {
 }
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
   position: absolute;
   top: 100%;
   left: -999em;
   z-index: 99999;
 }
 .main-navigation ul ul ul {
-  left: -999em;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  width: auto;
+  display: block;
+  left: 0;
   top: 0;
+}
+.main-navigation ul ul li {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  background-color: #d8a570;
 }
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   display: block;
   left: auto;
 }
 .main-navigation ul ul a {
-  width: 200px;
+  width: 100px;
+  max-width: 200px;
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -750,6 +757,7 @@ textarea {
 }
 .main-navigation li {
   position: relative;
+  font-weight: bold;
 }
 .main-navigation a {
   display: block;
