@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Heartland Hits
 Theme URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
@@ -446,15 +447,26 @@ i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  margin: 0;
+  background-color: #eed8c0;
+  padding: 1em 2em;
+  text-align: center;
+  font-weight: bold;
+}
+blockquote p {
+  margin: 0;
+}
+blockquote a {
+  text-decoration: none;
 }
 
 address {
   margin: 0 0 1.5em;
+  padding: 1em;
 }
 
 pre {
-  background: #eee;
+  background: #fffbda;
   font-family: "Ubuntu Mono", "Roboto Mono", monospace;
   line-height: 1.6;
   margin-bottom: 1.6em;
@@ -468,12 +480,15 @@ kbd,
 tt,
 var {
   font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  background-color: #d9d9d9;
+  color: #4b3025;
 }
 
 abbr,
 acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
+  color: #5f1814;
 }
 
 mark,
@@ -506,6 +521,15 @@ ol {
 
 ul {
   list-style: disc;
+}
+
+.site-main ul li::before {
+  content: "•"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #fcb958;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 ol {
@@ -546,11 +570,25 @@ table {
   margin: 0 0 1.5em;
   width: 100%;
 }
+table th {
+  background-color: #cd8c48;
+  color: #ffffff;
+  padding: 0 0.5em;
+}
+table td {
+  background-color: #fff8ee;
+  border: 2px solid #ffffff;
+  padding: 0 0.5em;
+}
+table a {
+  text-decoration: none;
+}
 
 /* Links
 --------------------------------------------- */
 a {
   color: #4169e1;
+  text-decoration: none;
 }
 a:visited {
   color: #800080;
@@ -651,7 +689,7 @@ textarea {
 }
 @media screen and (min-width: 414px) {
   .widget-area, .site-main {
-    padding: 2em;
+    padding: 2em 5em;
   }
 }
 
@@ -663,6 +701,15 @@ textarea {
 .main-navigation {
   display: block;
   width: 100%;
+  padding: 1em 0;
+}
+@media screen and (min-width: 1280px) {
+  .main-navigation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+  }
 }
 .main-navigation ul {
   display: none;
@@ -703,9 +750,14 @@ textarea {
   padding: 0 0.2em;
 }
 /* Small menu. */
+menu-toggle .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -831,7 +883,7 @@ textarea {
 .site-description {
   margin: 0;
   font-size: 1.125em;
-  padding: 0;
+  padding: 0.1em 0;
 }
 @media screen and (max-width: 414px) {
   .site-description {
@@ -845,11 +897,10 @@ textarea {
     justify-content: space-between;
   }
   .site-branding {
-    width: 33%;
-    flex: 1 0 auto;
+    max-width: 40%;
   }
   .site-navigation {
-    width: 40%;
+    max-width: 40%;
   }
 }
 .menu-toggle {
