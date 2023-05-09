@@ -669,6 +669,7 @@ textarea {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  justify-content: center;
 }
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -740,13 +741,15 @@ textarea {
   display: flex;
   list-style: none;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 .footer-navigation ul a {
   display: block;
   padding: 1em;
   text-decoration: none;
 }
-.footer-navigation ul a:hover, .footer-navigation ul a:focus {
+.footer-navigation ul a:hover {
   text-decoration: underline;
 }
 
@@ -777,20 +780,27 @@ textarea {
 .site-branding {
   min-height: 100px;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
-
-.custom-logo-link img {
-  margin-right: 3em;
-  display: block;
-  height: 65px;
+.site-branding .custom-logo-link {
+  margin-right: 1em;
+}
+.site-branding .custom-logo-link img {
+  height: 100px;
   width: auto;
 }
-
-.site-branding-text {
+.site-branding .custom-logo-link .site-branding-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 65px;
+  height: 100px;
+}
+@media screen and (min-width: 414px) {
+  .site-branding .custom-logo-link {
+    margin-right: 1em;
+  }
 }
 
 .site-title {
@@ -814,6 +824,8 @@ textarea {
 
 .site-description {
   margin: 0;
+  font-size: 1.125em;
+  padding: 0;
 }
 @media screen and (max-width: 414px) {
   .site-description {
@@ -836,6 +848,7 @@ textarea {
 }
 .menu-toggle {
   border-radius: 10px;
+  margin-left: auto;
 }
 
 /* Footer
@@ -852,6 +865,9 @@ textarea {
   }
 }
 
+.site-info {
+  font-size: 0.875em;
+}
 .site-info a {
   text-decoration: none;
 }

@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -36,6 +36,7 @@
     <header id="masthead" class="site-header">
         <div class="site-branding">
             <?php the_custom_logo(); ?>
+
             <div class="site-branding-text">
                 <?php
                 if (is_front_page() && is_home()) :
@@ -55,7 +56,7 @@
                     <p class="site-description"><?php echo $heartland_hits_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         ?></p>
                 <?php endif; ?>
-            </div>
+            </div><!-- .site-branding-text -->
         </div><!-- .site-branding -->
 
         <nav id="site-navigation" class="main-navigation">

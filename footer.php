@@ -12,13 +12,10 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-
 		<div class="site-info">
 
             <!-- Footer Navigation Menu-->
             <nav class="footer-navigation">
-                <button class="menu-toggle" aria-controls="secondary-menu"
-                        aria-expanded="false"><?php esc_html_e('Footer Menu', 'heartland-hits'); ?></button>
                 <?php
                 wp_nav_menu(
                     array(
@@ -40,9 +37,6 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'heartland-hits' ), 'heartland-hits', '<a href="http://underscores.me/">Team 04</a>' );
 				?>
 		</div><!-- .site-info -->
-
-
-
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
