@@ -208,3 +208,46 @@ function heartland_hits_custom_page_templates( $templates ) {
     return $templates;
 }
 add_filter( 'theme_page_templates', 'heartland_hits_custom_page_templates' );
+
+// Get the upcoming and past events
+function get_upcoming_events() {
+    $args = array(
+        'post_type' => 'page',
+        'posts_per_page' => -1,
+        'meta_key' => 'event_date',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+        'meta_query' => array(
+            array(
+                'key' => 'event_date',
+                'value' => date('Y-m-d'),
+                'compare' => '>=',
+                'type' => 'DATE'
+            )
+        )
+    );
+    $events = new WP_Query($args);
+    wp_reset_query();
+    return $events;
+}
+
+function get_past_events() {
+    $args = array(
+        'post_type' => 'page',
+        'posts_per_page' => -1,
+        'meta_key' => 'event_date',
+        'orderby' => 'meta_value',
+        'order' => 'DESC',
+        'meta_query' => array(
+            array(
+                'key' => 'event_date',
+                'value' => date('Y-m-d'),
+                'compare' => '<',
+                'type' => 'DATE'
+            )
+        )
+    );
+    $events = new WP_Query($args);
+    wp_reset_query();
+    return $events;
+}
