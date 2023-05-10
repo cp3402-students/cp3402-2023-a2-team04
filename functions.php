@@ -189,7 +189,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-
+// Any post with the category newsletter will use the single-newsletter.php
 function custom_category_template( $template ) {
     if ( is_single() && in_category( 'newsletter' ) ) {
         $new_template = locate_template( array( 'single-newsletter.php' ) );
@@ -200,3 +200,11 @@ function custom_category_template( $template ) {
     return $template;
 }
 add_filter( 'single_template', 'custom_category_template' );
+
+// Allow the theme to use page templates, list any available templates below
+function heartland_hits_custom_page_templates( $templates ) {
+    // This is where you list the template available
+    $templates['single-event.php'] = __( 'Single Event', 'heartland-hits' );
+    return $templates;
+}
+add_filter( 'theme_page_templates', 'heartland_hits_custom_page_templates' );
