@@ -40,6 +40,7 @@ get_header();
                 'posts_per_page' => -1,
                 'orderby' => 'date',
                 'order' => 'DESC',
+                'category_name' => 'newsletter',
             );
             $query = new WP_Query($args);
             $year = '';
