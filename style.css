@@ -1086,6 +1086,9 @@ textarea {
 
 .wp-caption-text {
   text-align: center;
+  font-size: 0.875em;
+  font-weight: lighter;
+  color: #666;
 }
 
 /* Galleries
