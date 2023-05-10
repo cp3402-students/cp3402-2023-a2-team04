@@ -189,3 +189,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+function custom_category_template( $template ) {
+    if ( is_single() && in_category( 'newsletter' ) ) {
+        $new_template = locate_template( array( 'single-newsletter.php' ) );
+        if ( !empty( $new_template ) ) {
+            return $new_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'single_template', 'custom_category_template' );
