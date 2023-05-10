@@ -20,7 +20,8 @@ get_header(); ?>
                         <?php while ($upcoming_events->have_posts()) : $upcoming_events->the_post(); ?>
                             <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <li>
-                                <?php echo get_post_meta(get_the_ID(), 'event_date', true); ?>
+                                <?php echo date('F j, Y', strtotime(get_post_meta(get_the_ID(), 'event_date', true))); ?>
+<!--                                --><?php //echo get_post_meta(get_the_ID(), 'event_date', true); ?>
                             </li>
                         <?php endwhile; ?>
                     </ul>
@@ -38,10 +39,8 @@ get_header(); ?>
                         <h3><?php the_title(); ?></h3>
                         <ul>
                             <li>
-                                <?php echo get_post_meta(get_the_ID(), 'event_date', true); ?>
-                            </li>
-                            <li>
-                                <?php echo get_post_meta(get_the_ID(), 'event_time', true); ?>
+<!--                                --><?php //echo get_post_meta(get_the_ID(), 'event_date', true); ?>
+                                <?php echo date('F j, Y', strtotime(get_post_meta(get_the_ID(), 'event_date', true))); ?>
                             </li>
                             <li>
                                 <?php echo get_post_meta(get_the_ID(), 'event_venue', true); ?>
@@ -51,9 +50,12 @@ get_header(); ?>
                         <a href="<?php the_permalink(); ?>">Read More</a>
                     <?php endwhile; ?>
                     <?php wp_reset_postdata(); ?>
-                    <div class="expand-past-events">
-                        <a href="#" class="button">Show More</a>
-                    </div>
+
+<!--                TODO: Use Javascript to make this work, update code above so only 1 shows and rest are hidden-->
+<!--                    <div class="expand-past-events">-->
+<!--                        <a href="#" class="button">Show More</a>-->
+<!--                    </div>-->
+
                 <?php else : ?>
                     <p>No past events.</p>
                 <?php endif; ?>
