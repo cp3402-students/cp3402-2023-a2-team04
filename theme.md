@@ -7,11 +7,27 @@ theme.
 
 ## Features
 
+**Custom Logo:**
 * A custom logo that can be added into the header.
+
+**Custom Header Image:**
 * A custom header image that can be added. It will not appear on smaller screens to save space and only appears on the
   front page.
-* Social media icons in place in the footer.
-* A secondary navigation menu for shorter navigation in the footer.
+
+**Social Media Icons:**
+* Social media icons appear in the footer.
+
+**Header and Footer Navigation:**
+* A secondary navigation menu for shorter or custom navigation in the footer.
+
+**Newsletter:**
+* Any post that uses the 'newsletter' category will automatically use the Newsletter template. Formatted for a monthly
+  newsletter.
+
+**Events:**
+* Any page that uses the single event template will be set up for using an advanced custom field plugin to quickly
+  add and display the required event information.
+* Any page that uses the events template will display a list of upcoming and past events.
 
 ## Design
 
