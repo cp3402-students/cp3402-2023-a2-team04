@@ -143,6 +143,10 @@ function heartland_hits_scripts() {
     // Google fonts TODO: Fix up enqueue and remove import statement from _typography variables
 //    wp_enqueue_style('heartland-hits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
+    // Google icons
+    wp_enqueue_style('heartland-hits-icons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+    wp_enqueue_style('heartland-hits-social-media-icons', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
     // Style
 	wp_enqueue_style( 'heartland-hits-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'heartland-hits-style', 'rtl', 'replace' );
@@ -182,3 +186,65 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Any post with the category newsletter will use the single-newsletter.php
+function custom_category_template( $template ) {
+    if ( is_single() && in_category( 'newsletter' ) ) {
+        $new_template = locate_template( array( 'single-newsletter.php' ) );
+        if ( !empty( $new_template ) ) {
+            return $new_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'single_template', 'custom_category_template' );
+
+// Allow the theme to use page templates, list any available templates below
+function heartland_hits_custom_page_templates( $templates ) {
+    // This is where you list the template available
+    $templates['single-event.php'] = __( 'Single Event', 'heartland-hits' );
+    return $templates;
+}
+add_filter( 'theme_page_templates', 'heartland_hits_custom_page_templates' );
+
+// Get the upcoming and past events
+function get_upcoming_events() {
+    $args = array(
+        'post_type' => 'page',
+        'posts_per_page' => -1,
+        'meta_key' => 'event_date',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+        'meta_query' => array(
+            array(
+                'key' => 'event_date',
+                'value' => date('Y-m-d'),
+                'compare' => '>=',
+                'type' => 'DATE'
+            )
+        )
+    );
+    $events = new WP_Query($args);
+    wp_reset_query();
+    return $events;
+}
+
+function get_past_events() {
+    $args = array(
+        'post_type' => 'page',
+        'posts_per_page' => -1,
+        'meta_key' => 'event_date',
+        'orderby' => 'meta_value',
+        'order' => 'DESC',
+        'meta_query' => array(
+            array(
+                'key' => 'event_date',
+                'value' => date('Y-m-d'),
+                'compare' => '<',
+                'type' => 'DATE'
+            )
+        )
+    );
+    $events = new WP_Query($args);
+    wp_reset_query();
+    return $events;
+}

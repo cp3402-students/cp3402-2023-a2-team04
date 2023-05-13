@@ -1,7 +1,47 @@
-.comment-content a {
-	word-wrap: break-word;
+.comment-content {
+  border: 1px solid lighten($color__table-header-background, 20%);
+  padding: 0 0.5em;
+  //background-color: ;
+
+  a {
+    word-wrap: break-word;
+  }
 }
 
 .bypostauthor {
-	display: block;
+  display: block;
+}
+
+.comment-meta {
+  background-color: lighten($color__table-header-background, 20%);
+  margin-left: 2em;
+
+  .avatar {
+    margin-right: 1em;
+  }
+}
+
+.comment-metadata {
+  background-color: lighten($color__table-data, 30%);
+  padding-left: 2em;
+  font-size: $font__size_body_secondary;
+}
+
+.comment-list {
+  //background-color: green;
+
+}
+
+.reply {
+  margin-bottom: 1em;
+  background-color: lighten($color__table-data, 25%);
+
+  a {
+    cursor: pointer;
+  }
+}
+
+.comment-reply-link {
+  //color: $color__text-highlight;
+  padding: 0 1em;
 }

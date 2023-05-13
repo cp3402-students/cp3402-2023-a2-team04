@@ -18,7 +18,7 @@
 .site-header {
   position: relative;
   padding: 1em;
-  background-color: $color__header-background;
+  background-color: $color__background-header;
   //@include gradient($color_white, $color_brown);
 
   @media screen and (min-width: $query__small) {
@@ -59,6 +59,7 @@
   margin: 0;
   padding: 0;
   font-weight: bold;
+  //text-align: center;
 
   a {
     text-decoration: none;
@@ -77,7 +78,8 @@
 .site-description {
   margin: 0;
   font-size: $font__size_lesser_subheading;
-  padding: 0;
+  padding: 0.1em 0;
+  //text-align: center;
 
   @media screen and (max-width: $query__small) {
     display: none;
@@ -88,16 +90,24 @@
 @media screen and (min-width: $query__large) {
   .site-header {
     display: flex;
+    //flex-wrap: wrap;
     justify-content: space-between;
+    //align-items: flex-end;
   }
 
   .site-branding {
-    width: 33%;
-    flex: 1 0 auto;
+    //width: 100%;
+    //width: 33%;
+    max-width: 40%;
+    //flex: 1 0 auto;
+    //margin-bottom: 1em;
   }
 
   .site-navigation {
-    width: 40%;
+    //width: 100%;
+    //width: 40%;
+    //margin-left: auto;
+    max-width: 40%;
   }
 }
 

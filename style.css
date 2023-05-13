@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Heartland Hits
 Theme URI: https://github.com/cp3402-students/cp3402-2023-a2-team04
@@ -446,15 +447,26 @@ i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  margin: 0;
+  background-color: #eed8c0;
+  padding: 1em 2em;
+  text-align: center;
+  font-weight: bold;
+}
+blockquote p {
+  margin: 0;
+}
+blockquote a {
+  text-decoration: none;
 }
 
 address {
   margin: 0 0 1.5em;
+  padding: 1em;
 }
 
 pre {
-  background: #eee;
+  background: #fffbda;
   font-family: "Ubuntu Mono", "Roboto Mono", monospace;
   line-height: 1.6;
   margin-bottom: 1.6em;
@@ -468,12 +480,15 @@ kbd,
 tt,
 var {
   font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  background-color: #d9d9d9;
+  color: #4b3025;
 }
 
 abbr,
 acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
+  color: #5f1814;
 }
 
 mark,
@@ -486,6 +501,11 @@ big {
   font-size: 125%;
 }
 
+q {
+  color: #5f1814;
+  font-weight: bold;
+}
+
 /* Elements
 --------------------------------------------- */
 body {
@@ -493,10 +513,11 @@ body {
 }
 
 hr {
-  background-color: #ccc;
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
+  height: 2px;
+  background-color: #4b3025;
+  background-image: linear-gradient(to right, #4b3025, #fcb958, #4b3025);
+  border: none;
+  margin: 20px 0;
 }
 
 ul,
@@ -506,6 +527,15 @@ ol {
 
 ul {
   list-style: disc;
+}
+
+.site-main ul li::before {
+  content: "•"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #fcb958;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 ol {
@@ -520,6 +550,7 @@ li > ol {
 
 dt {
   font-weight: 700;
+  color: #5f1814;
 }
 
 dd {
@@ -546,17 +577,31 @@ table {
   margin: 0 0 1.5em;
   width: 100%;
 }
+table th {
+  background-color: #cd8c48;
+  color: #ffffff;
+  padding: 0 0.5em;
+}
+table td {
+  background-color: #fff8ee;
+  border: 1px solid #ffffff;
+  padding: 0 0.5em;
+}
+table a {
+  text-decoration: none;
+}
 
 /* Links
 --------------------------------------------- */
 a {
   color: #4169e1;
+  text-decoration: none;
 }
 a:visited {
   color: #800080;
 }
 a:hover, a:focus, a:active {
-  color: #cd8c48;
+  color: #5f1814;
 }
 a:focus {
   outline: thin dotted;
@@ -651,7 +696,7 @@ textarea {
 }
 @media screen and (min-width: 414px) {
   .widget-area, .site-main {
-    padding: 2em;
+    padding: 2em 5em;
   }
 }
 
@@ -663,6 +708,15 @@ textarea {
 .main-navigation {
   display: block;
   width: 100%;
+  padding: 0.2em 0;
+}
+@media screen and (min-width: 1280px) {
+  .main-navigation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+  }
 }
 .main-navigation ul {
   display: none;
@@ -673,22 +727,30 @@ textarea {
 }
 .main-navigation ul ul {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
   position: absolute;
   top: 100%;
   left: -999em;
   z-index: 99999;
 }
 .main-navigation ul ul ul {
-  left: -999em;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  width: auto;
+  display: block;
+  left: 0;
   top: 0;
+}
+.main-navigation ul ul li {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  background-color: #d8a570;
+  position: relative;
 }
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
   display: block;
   left: auto;
 }
 .main-navigation ul ul a {
-  width: 200px;
+  width: 100px;
+  max-width: 200px;
 }
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
@@ -696,6 +758,7 @@ textarea {
 }
 .main-navigation li {
   position: relative;
+  font-weight: bold;
 }
 .main-navigation a {
   display: block;
@@ -703,9 +766,14 @@ textarea {
   padding: 0 0.2em;
 }
 /* Small menu. */
+.menu-toggle .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -831,7 +899,7 @@ textarea {
 .site-description {
   margin: 0;
   font-size: 1.125em;
-  padding: 0;
+  padding: 0.1em 0;
 }
 @media screen and (max-width: 414px) {
   .site-description {
@@ -845,11 +913,10 @@ textarea {
     justify-content: space-between;
   }
   .site-branding {
-    width: 33%;
-    flex: 1 0 auto;
+    max-width: 40%;
   }
   .site-navigation {
-    width: 40%;
+    max-width: 40%;
   }
 }
 .menu-toggle {
@@ -876,6 +943,39 @@ textarea {
 }
 .site-info a {
   text-decoration: none;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 1.5em;
+  max-width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
 
 /* Posts and pages
@@ -906,12 +1006,42 @@ textarea {
 
 /* Comments
 --------------------------------------------- */
+.comment-content {
+  border: 1px solid #e3be98;
+  padding: 0 0.5em;
+}
 .comment-content a {
   word-wrap: break-word;
 }
 
 .bypostauthor {
   display: block;
+}
+
+.comment-meta {
+  background-color: #e3be98;
+  margin-left: 2em;
+}
+.comment-meta .avatar {
+  margin-right: 1em;
+}
+
+.comment-metadata {
+  background-color: #fff8ee;
+  padding-left: 2em;
+  font-size: 0.875em;
+}
+
+.reply {
+  margin-bottom: 1em;
+  background-color: #feeed5;
+}
+.reply a {
+  cursor: pointer;
+}
+
+.comment-reply-link {
+  padding: 0 1em;
 }
 
 /* Widgets
@@ -956,6 +1086,9 @@ textarea {
 
 .wp-caption-text {
   text-align: center;
+  font-size: 0.875em;
+  font-weight: lighter;
+  color: #666;
 }
 
 /* Galleries

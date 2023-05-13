@@ -10,15 +10,28 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	margin: 0;
+	background-color: lighten($color__background-quote, 30%);
+	padding: 1em 2em;
+	text-align: center;
+	font-weight: bold;
+
+	p {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
 }
 
 address {
 	margin: 0 0 1.5em;
+	padding: 1em;
 }
 
 pre {
-	background: $color__background-pre;
+	background: lighten($color__background-pre, 5%);
 	font-family: $font__pre;
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
@@ -32,12 +45,15 @@ kbd,
 tt,
 var {
 	font-family: $font__code;
+	background-color: lighten($color__background-code, 45%);
+	color: $color__text-code;
 }
 
 abbr,
 acronym {
 	border-bottom: 1px dotted $color__border-abbr;
 	cursor: help;
+	color: $color__text-highlight;
 }
 
 mark,
@@ -48,4 +64,9 @@ ins {
 
 big {
 	font-size: 125%;
+}
+
+q {
+	color: $color__text-highlight;
+	font-weight: bold;
 }

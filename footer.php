@@ -14,6 +14,11 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+
             <!-- Footer Navigation Menu-->
             <nav class="footer-navigation">
                 <?php
@@ -38,9 +43,5 @@
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
 
 <?php wp_footer(); ?>
-
-</body>
-</html>
