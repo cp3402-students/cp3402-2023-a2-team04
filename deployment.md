@@ -5,7 +5,7 @@
 * CMS - `WordPress`
 * Documentation and Team Management - `Trello`
 * Communication - `Discord`
-* Local Environments - `Docker`
+* Local Environments & IDE - `Docker`, `PHP Storm`
 * Version Control - `GitHub`
 
 ## CMS - WordPress
@@ -36,7 +36,12 @@ Setup is very simple. It simply requires an email to register a new account.
 Some discord servers employ a phone verification security system to be able to join, however this will not be necessary
 for this project.
 
-## Local Environments - Docker
+## Local Environments & IDE - Docker, PHP Storm
+Docker is a widely used virtualization software/platform. The team used a Docker container to house and run applications 
+for the projects development.
+
+Before work began on the theme it was decided that PHP Storm would be used. It was not a difficult decision given its 
+popularity, syntax highlighting features, integration, intuitive and friendly UI, and so on.
 
 ## Version Control - GitHub
 
