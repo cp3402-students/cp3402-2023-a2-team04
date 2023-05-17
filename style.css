@@ -514,8 +514,8 @@ body {
 
 hr {
   height: 2px;
-  background-color: #fcb958;
-  background-image: linear-gradient(to right, #fcb958, #5f1814, #fcb958);
+  background-color: #4b3025;
+  background-image: linear-gradient(to right, #4b3025, #fcb958, #4b3025);
   border: none;
   margin: 20px 0;
 }
