@@ -9,8 +9,7 @@
  * @package Heartland_Hits
  */
 
-get_header();
-
+get_header('frontpage');
 ?>
 
     <main id="primary" class="site-main">
@@ -47,7 +46,6 @@ get_header();
 
         endif;
         ?>
-
     </main><!-- #main -->
 
 <?php
