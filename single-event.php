@@ -33,14 +33,13 @@ get_header();
                     <div class="entry-content">
                         <h2>Event Details:</h2>
                         <ul>
-                            <li><strong>Date:</strong> <?php echo get_post_meta(get_the_ID(), 'event_date', true); ?>
+                            <li><strong>Date:</strong> <?php echo date('F j, Y', strtotime(get_post_meta(get_the_ID(), 'event_date', true))); ?>
                             </li>
-                            <li><strong>Time:</strong> <?php echo get_post_meta(get_the_ID(), 'event_time', true); ?>
+                            <li><strong>Time:</strong> <?php echo date('h:i a', strtotime(get_post_meta(get_the_ID(), 'event_time', true))); ?>
                             </li>
                             <li><strong>Venue:</strong> <?php echo get_post_meta(get_the_ID(), 'event_venue', true); ?>
                             </li>
-                            <li>
-                                <strong>Details:</strong> <?php echo get_post_meta(get_the_ID(), 'event_details', true); ?>
+                            <li><strong>Details:</strong> <?php echo get_post_meta(get_the_ID(), 'event_details', true); ?>
                             </li>
                             <?php if (get_post_meta(get_the_ID(), 'event_lineup', true)) : ?>
                                 <li><strong>Performers:</strong></li>
