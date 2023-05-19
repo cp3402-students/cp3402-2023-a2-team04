@@ -13,6 +13,8 @@ $color_off_white: #d2c1b4;
 $color_off_brown: #948071;
 $color_bull_horn_brown: #795d3c;
 $color_semi_transparent_dark: rgba(17, 17, 17, 0.54);
+$color_bluish_grey_cyan: #9db5b7;
+$color_dark_grey_cyan: #6e9194;
 
 $color_mid_blue: #21759b;
 $color_blue_royal: #4169e1;
@@ -71,3 +73,10 @@ $color__icon-twitter: #55ACEE;
 $color__icon-youtube: #bb0000;
 $color__icon-instagram: #125688;
 
+// Buttons
+$color__button-main: $color_dark_red;
+
+// Entry Footer: Categories, Tags, Edit and Comment Links
+$color__entry-main: $color_white;
+$color__entry-secondary: $color_dark_red;
+$color__entry-text: $color_dark_grey_cyan;

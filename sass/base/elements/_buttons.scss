@@ -24,7 +24,7 @@ input[type="submit"] {
   padding: 0.2em;
 
   .wp-block-button__link {
-    background-color: $color_bull_horn_brown;
+    background-color: $color__button-main;
   }
 }
 
@@ -33,14 +33,14 @@ input[type="submit"] {
 }
 
 .wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline>.wp-block-button__link {
-  border: 2px solid $color_bull_horn_brown;
+  border: 2px solid $color__button-main;
 }
 
 .is-style-squared {
   padding: 0.2em;
 
   a {
-    background-color: $color_bull_horn_brown;
+    background-color: $color__button-main;
     border-radius: 0;
   }
 }

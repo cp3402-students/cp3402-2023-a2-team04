@@ -13,3 +13,7 @@ img {
 figure {
 	margin: 0; // Extra wide images within figure tags don't overflow the content area.
 }
+
+.blocks-gallery-grid:not(.has-nested-images).alignleft, .blocks-gallery-grid:not(.has-nested-images).alignright, .wp-block-gallery:not(.has-nested-images).alignleft, .wp-block-gallery:not(.has-nested-images).alignright {
+	margin-right: 1em;
+}

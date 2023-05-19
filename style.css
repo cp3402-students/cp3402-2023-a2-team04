@@ -461,6 +461,20 @@ blockquote a {
   text-decoration: none;
 }
 
+.wp-block-pullquote.is-style-solid-color blockquote {
+  font-size: 0.5em;
+}
+@media screen and (min-width: 601px) {
+  .wp-block-pullquote.is-style-solid-color blockquote {
+    font-size: 1em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wp-block-pullquote.is-style-solid-color blockquote {
+    font-size: 2em;
+  }
+}
+
 address {
   margin: 0 0 1.5em;
   padding: 1em;
@@ -574,6 +588,10 @@ figure {
   margin: 0;
 }
 
+.blocks-gallery-grid:not(.has-nested-images).alignleft, .blocks-gallery-grid:not(.has-nested-images).alignright, .wp-block-gallery:not(.has-nested-images).alignleft, .wp-block-gallery:not(.has-nested-images).alignright {
+  margin-right: 1em;
+}
+
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -611,6 +629,24 @@ a:hover, a:active {
   outline: 0;
 }
 
+.entry-footer {
+  padding: 0.2em;
+}
+
+.edit-link, .cat-links, .tags-links, .comments-link {
+  padding: 0px 10px;
+  border-radius: 5px;
+  color: #6e9194;
+  background-color: #ffffff;
+  margin-right: 10px;
+}
+.edit-link a, .cat-links a, .tags-links a, .comments-link a {
+  color: #7e0904;
+}
+.edit-link a:hover, .cat-links a:hover, .tags-links a:hover, .comments-link a:hover {
+  color: #fcb958;
+}
+
 /* Forms
 --------------------------------------------- */
 button,
@@ -645,7 +681,7 @@ input[type=submit]:focus {
   padding: 0.2em;
 }
 .wp-block-button .wp-block-button__link {
-  background-color: #795d3c;
+  background-color: #7e0904;
 }
 
 .is-style-outline {
@@ -653,14 +689,14 @@ input[type=submit]:focus {
 }
 
 .wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline > .wp-block-button__link {
-  border: 2px solid #795d3c;
+  border: 2px solid #7e0904;
 }
 
 .is-style-squared {
   padding: 0.2em;
 }
 .is-style-squared a {
-  background-color: #795d3c;
+  background-color: #7e0904;
   border-radius: 0;
 }
 
