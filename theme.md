@@ -1,1 +1,0 @@
-This page should help a new developer to continue developing your theme. Include relevant information about what features your theme has, files that would need editing, designdecisions, colours, etc. You do not need to produce a serious design document or reproduce basicdetails about WordPress theme development, only what is specific to your theme.
