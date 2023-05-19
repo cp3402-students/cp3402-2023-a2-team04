@@ -248,3 +248,27 @@ function get_past_events() {
     wp_reset_query();
     return $events;
 }
+
+function heartland_hits_original_date_posted_on() {
+    $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+    $date = get_the_date('F Y'); // Format: Month Year
+
+    $time_string = sprintf($time_string,
+        esc_attr(get_the_date('c')),
+        esc_html($date)
+    );
+
+    printf('<p class="posted-on">%s</p>', $time_string);
+}
+
+//function heartland_hits_modified_date_posted_on() {
+//    $time_string = '<time class="updated" datetime="%1$s">%2$s</time>';
+//    $date = get_the_modified_date('F Y'); // Format: Month Year
+//
+//    $time_string = sprintf($time_string,
+//        esc_attr(get_the_modified_date('c')),
+//        esc_html($date)
+//    );
+//
+//    printf('<p class="posted-on">%s</p>', $time_string);
+//}

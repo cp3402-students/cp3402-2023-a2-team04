@@ -17,26 +17,26 @@ get_header(); ?>
                 <h2>Upcoming Events</h2>
                 <?php if ($upcoming_events->have_posts()) : ?>
 
-                        <?php while ($upcoming_events->have_posts()) : $upcoming_events->the_post(); ?>
-                            <?php
-                            $is_recurring = get_post_meta(get_the_ID(), 'event_recurring', true);
-                            if ($is_recurring) {
-                                continue; // Skip recurring events in the upcoming events list
-                            }
-                            ?>
-                            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <?php while ($upcoming_events->have_posts()) : $upcoming_events->the_post(); ?>
+                        <?php
+                        $is_recurring = get_post_meta(get_the_ID(), 'event_recurring', true);
+                        if ($is_recurring) {
+                            continue; // Skip recurring events in the upcoming events list
+                        }
+                        ?>
+                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                         <ul>
-                            <li>
-                                <?php echo date('F j, Y', strtotime(get_post_meta(get_the_ID(), 'event_date', true))); ?>
-                                <!--                                --><?php //echo get_post_meta(get_the_ID(), 'event_date', true); ?>
-                            </li>
-                            <li>
-                                <?php echo get_post_meta(get_the_ID(), 'event_venue', true); ?>
-                            </li>
+                        <li>
+                            <?php echo date('F j, Y', strtotime(get_post_meta(get_the_ID(), 'event_date', true))); ?>
+                            <!--                                --><?php //echo get_post_meta(get_the_ID(), 'event_date', true); ?>
+                        </li>
+                        <li>
+                            <?php echo get_post_meta(get_the_ID(), 'event_venue', true); ?>
+                        </li>
+                        </ul>
                         <?php the_excerpt(); ?>
                         <a href="<?php the_permalink(); ?>">Read More</a>
-                        <?php endwhile; ?>
-                    </ul>
+                    <?php endwhile; ?>
                 <?php else : ?>
                     <p>No upcoming events.</p>
                 <?php endif; ?>
@@ -55,14 +55,16 @@ get_header(); ?>
                         }
                         ?>
                         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <ul>
-                        <li>
-                            <?php echo get_post_meta(get_the_ID(), 'event_venue', true); ?>
-                        </li>
-                        <li>
-                            <?php echo get_post_meta(get_the_ID(), 'event_details', true); ?>
-                        </li>
-                    </ul>
+                        <ul>
+                            <li>
+                                <?php echo get_post_meta(get_the_ID(), 'event_venue', true); ?>
+                            </li>
+                            <li>
+                                <?php echo get_post_meta(get_the_ID(), 'event_details', true); ?>
+                            </li>
+                        </ul>
+                        <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>">Read More</a>
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
