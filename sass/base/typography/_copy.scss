@@ -25,6 +25,16 @@ blockquote {
 	}
 }
 
+.wp-block-pullquote.is-style-solid-color blockquote {
+	font-size: 0.5em;
+	@media screen and (min-width: $query__medium){
+		font-size: 1em;
+	}
+	@media screen and (min-width: $query__large){
+		font-size: 2em;
+	}
+}
+
 address {
 	margin: 0 0 1.5em;
 	padding: 1em;
