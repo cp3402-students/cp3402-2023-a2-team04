@@ -1,7 +1,7 @@
 hr {
 	height: 2px;
-	background-color: $color_brown;
-	background-image: linear-gradient(to right, $color_brown, $color__background-hr, $color_brown);
+	background-color: $color__background-hr-out;
+	background-image: linear-gradient(to right, $color__background-hr-out, $color__background-hr-in, $color__background-hr-out);
 	border: none;
 	margin: 20px 0;
 }
