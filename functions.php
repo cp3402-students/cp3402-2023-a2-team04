@@ -202,6 +202,8 @@ add_filter( 'single_template', 'custom_category_template' );
 function heartland_hits_custom_page_templates( $templates ) {
     // This is where you list the template available
     $templates['single-event.php'] = __( 'Single Event', 'heartland-hits' );
+    $templates['page-events.php'] = __( 'All Events', 'heartland-hits' );
+    $templates['page-newsletters.php'] = __( 'All Newsletters', 'heartland-hits' );
     return $templates;
 }
 add_filter( 'theme_page_templates', 'heartland_hits_custom_page_templates' );
@@ -272,3 +274,32 @@ function heartland_hits_original_date_posted_on() {
 //
 //    printf('<p class="posted-on">%s</p>', $time_string);
 //}
+
+// Add to customiser to add links to the social media icons in footer
+function register_social_media_settings( $wp_customize ) {
+    $wp_customize->add_section( 'social_media_links', array(
+        'title'    => __( 'Social Media Links', 'heartland-hits' ),
+        'priority' => 90,
+    ) );
+
+    $social_media_icons = array(
+        'facebook'  => 'Facebook',
+        'twitter'   => 'Twitter',
+        'youtube'   => 'YouTube',
+        'instagram' => 'Instagram',
+    );
+
+    foreach ( $social_media_icons as $icon => $label ) {
+        $wp_customize->add_setting( 'social_media_' . $icon . '_link', array(
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+
+        $wp_customize->add_control( 'social_media_' . $icon . '_link', array(
+            'label'    => __( $label . ' Link', 'heartland-hits' ),
+            'section'  => 'social_media_links',
+            'type'     => 'text',
+            'priority' => 10,
+        ) );
+    }
+}
+add_action( 'customize_register', 'register_social_media_settings' );
