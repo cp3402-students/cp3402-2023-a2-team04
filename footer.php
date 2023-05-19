@@ -30,6 +30,7 @@
                 ?>
             </nav><!-- #site-navigation -->
 
+            <div class="author-theme-footer-info">
             <a href="<?php echo esc_url(__('https://wordpress.org/', 'heartland-hits')); ?>">
                 <?php
                 /* translators: %s: CMS name, i.e. WordPress. */
@@ -43,6 +44,7 @@
             $author_name = $theme->get('Author');
             printf(esc_html__('Theme: %1$s by %2$s.', 'heartland-hits'), 'heartland-hits', '<a href="' . esc_url($author_uri) . '">' . esc_html($author_name) . '</a>');
             ?>
+            </div>
 
         </div><!-- .site-info -->
     </footer><!-- #colophon -->

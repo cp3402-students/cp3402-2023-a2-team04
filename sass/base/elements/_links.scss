@@ -1,23 +1,24 @@
 a {
-	color: $color__link;
-	text-decoration: none;
+  color: $color__link;
+  text-decoration: none;
 
-	&:visited {
-		color: $color__link-visited;
-	}
+  &:visited {
+    color: $color__link-visited;
 
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
+  }
 
-	&:focus {
-		outline: thin dotted;
-	}
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
 
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
 }
