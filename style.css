@@ -37,6 +37,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     - Global
 # Components
 	- Navigation
+	- Site
 	- Posts and pages
 	- Comments
 	- Widgets
@@ -881,7 +882,7 @@ textarea {
   font-size: 1.25em;
   margin: 0;
   padding: 0;
-  font-weight: bold;
+  font-weight: 700;
 }
 .site-title a {
   text-decoration: none;
