@@ -5,7 +5,7 @@
 * CMS - `WordPress`
 * Documentation and Team Management - `Trello`
 * Communication - `Discord`
-* Local Environments - `Docker`
+* Local Environments & IDE - `Docker`, `PHP Storm`
 * Version Control - `GitHub`
 
 ## CMS - WordPress
@@ -36,7 +36,12 @@ Setup is very simple. It simply requires an email to register a new account.
 Some discord servers employ a phone verification security system to be able to join, however this will not be necessary
 for this project.
 
-## Local Environments - Docker
+## Local Environments & IDE - Docker, PHP Storm
+Docker is a widely used virtualization software/platform. The team used a Docker container to house and run applications 
+for the projects development.
+
+Before work began on the theme it was decided that PHP Storm would be used. It was not a difficult decision given its 
+popularity, syntax highlighting features, integration, intuitive and friendly UI, and so on.
 
 ## Version Control - GitHub
 
@@ -259,13 +264,188 @@ is recommended to not run gulp run watch command at the same time.
 9. Depending on development branch rules: 1 reviewer may be required to approve merge, once approved merge and delete
    branch
 
-### Development Server
-
-GitHub branch name: development
+## Hosted Environments - Docker
 
 ### Staging Server
 
-GitHub branch name: staging
+GitHub branch name: staging  
+Hardware Requirements: 1 vcpu - 2gb RAM  
+The following instructions were tested on a DigitalOcean Docker Droplet with Ubuntu 22.04 and Docker 23.0.6.
+
+#### Initial Docker-Compose setup
+
+1. Install Docker-Compose, instructions can be found in the [official DigitalOcean guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+2. Navigate to the directory you want to store your project files
+3. Create two new files, the first file named "docker-compose.yml" and the second named "Dockerfile" `touch docker-compose.yml Dockerfile`
+4. Add the code from the code blocks below to the relevant `docker-compose.yml` and `Dockerfile` files. Any changes to usernames/passwords and file locations can be made here.
+5. Navigate to the root folder where the docker-compose.yml file is located and create a new directory named "secrets" and move to the new directory
+6. Create three text files in the secrets directory`touch mysql_root_password.txt mysql_user.txt mysql_password.txt`
+7. Add the required username to the `mysql_user.txt` file and generate new passwords and add them to the `mysql_root_password.txt` file and the `mysql_password.txt` file
+
+#### Docker image setup
+
+1. Navigate back to the root folder of the project where the `docker-compose.yml` and `Dockerfile` are located
+2. Create the jenkins image first `docker build -t jenkins .`
+3. Bring up the docker containers `docker-compose up -d`  
+
+#### Jenkins Configuration
+
+1. Access the Jenkins web interface by going to `<Site URL>:8081`. This may take some time to configure if the Docker container has only been recently created
+2. Once in Jenkins we first need to set security. Navigate to `Manage Jenkins > Configure Global Security`
+3. Set `Security Realm` to `Jenkin's own user database` and press `save`
+4. Set the username and password in the next window that pops up, these are your credentials to log into Jenkins in the future.
+5. Next we need to install the Git and Github plugin. Navigate to `Manage Jenkins > Manage Plugins > Available Plugins`
+6. Search for `git` and tick the install box. Search for `github` and tick the install box.
+7. With both plugin install boxes ticked, press `Download now and install after restart`
+8. Tick the box on the installation page `Restart Jenkins when installation is complete and no jobs are running`
+9. Once both plugins are installed and Jenkins has restarted navigate to the Jenkins dashboard and select `New Item` to create a new project.
+10. Give your project the name `wordpress`, then choose `Freestyle project` and click on `OK` - Note the folder destinations are preconfigured to using the name "wordpress", if this is changed the folder locations will not work. If you want to use a different name you will have to change the `EXECUTE SHELL` code listed below
+11. In the `Configure` page set `Source Code Management` to `Git`. This will open up some more options
+12. Set `Repository URL` to the Git Repo URL. If you need to add credentials this can be done here
+13. Set the Branch under `Branch Specifier` to the required branch
+13. Set `Build Triggers` to `GitHub hook trigger for GITScm polling`
+14. Under `Build Steps` Select `Add build step` and select `Execute Shell`. Paste the below code in the `Command` window
+15. Press `Apply` and then `Save` to save these steps
+16. Test if the project works by pressing `Build Now` in the wordpress project
+
+#### Jenkins Troubleshooting
+
+1. For troubleshooting an error message click on the `build number` and press `Console Output` to view the console status. This will show the build process step by step and display where the issue is occuring
+2. The GitHub repo may need to have a Webhook created which can be done in the settings of the repo. An API token can be generated in the Jenkins security settings under `Git plugin notifyCommit access tokens`
+
+#### Access each web GUI through the following ports:  
+   1. WordPress - `<Site URL>:8000` - Will require a first time set up  
+   2. PHPMyAdmin - `<Site URL>:8181` - Can be accessed using credentials straight away  
+   3. Jenkins - `<Site URL>:8081` - Will automatically configure but can take a few moments
+
+#### docker-compose.yml file:
+
+```yaml
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
+      MYSQL_USER_FILE: /run/secrets/MYSQL_USER
+      MYSQL_PASSWORD_FILE: /run/secrets/MYSQL_PASSWORD
+      MYSQL_DATABASE: wordpress
+    volumes:
+      - mysql-data:/var/lib/mysql
+    secrets:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+
+  wordpress:
+    image: wordpress:6.2
+    container_name: wordpress
+    restart: always
+    depends_on:
+      - db
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER_FILE: /run/secrets/MYSQL_USER
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/MYSQL_PASSWORD
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - ./wordpress_data:/var/www/html/wp-content/themes
+    ports:
+      - "8000:80"
+    secrets:
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+
+  phpmyadmin:
+    image: phpmyadmin:5.2
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8181:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
+    secrets:
+      - MYSQL_ROOT_PASSWORD
+
+  jenkins:
+    build: .
+    image: jenkins
+    container_name: jenkins
+    restart: always
+    ports:
+      - "8081:8080"
+    environment:
+      JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  mysql-data:
+  jenkins-data:
+
+secrets:
+  MYSQL_ROOT_PASSWORD:
+    file: ./secrets/mysql_root_password.txt
+  MYSQL_USER:
+    file: ./secrets/mysql_user.txt
+  MYSQL_PASSWORD:
+    file: ./secrets/mysql_password.txt
+```
+#### Dockerfile file:
+
+```dockerfile
+FROM jenkins/jenkins:lts
+
+USER root
+
+RUN apt-get update && apt-get install -y wget apt-transport-https ca-certificates curl gnupg lsb-release && \
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
+    echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" | \
+    tee /etc/apt/sources.list.d/docker.list && \
+    apt-get update && \
+    apt-get -y install docker-ce docker-ce-cli containerd.io
+
+# Add jenkins users to the docker group
+RUN getent group docker || groupadd docker && \
+    usermod -aG docker jenkins
+
+
+# Switch back to jenkins user
+USER jenkins
+```      
+#### Execute Shell code:
+
+```shell
+# Set the PATH
+export PATH=$PATH:/usr/bin/
+
+REPO_URL=https://github.com/cp3402-students/cp3402-2023-a2-team04
+BRANCH=staging
+
+# Clone the repository
+if [ -d .git ]; then
+  git fetch --all
+  git reset --hard origin/$BRANCH
+else
+  git clone --branch $BRANCH $REPO_URL
+fi
+
+# Move to the correct directory
+cd /var/jenkins_home/workspace/wordpress
+
+# Remove any files that were deleted from the repository
+git clean -df
+docker exec wordpress sh -c 'rm -rf /var/www/html/wp-content/themes/heartlandhits/*'
+
+# Copy the files to the Wordpress container
+docker cp . wordpress:/var/www/html/wp-content/themes/heartlandhits
+```
 
 ### Live Server
 

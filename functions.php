@@ -147,10 +147,6 @@ function heartland_hits_scripts() {
     wp_enqueue_style('heartland-hits-icons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
     wp_enqueue_style('heartland-hits-social-media-icons', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-    // BootStrap
-    wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/bootstrap.min.css' );
-    wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array(), true );
-
     // Style
 	wp_enqueue_style( 'heartland-hits-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'heartland-hits-style', 'rtl', 'replace' );
@@ -251,6 +247,24 @@ function get_past_events() {
     $events = new WP_Query($args);
     wp_reset_query();
     return $events;
+}
+
+function heartland_hits_month_year_posted_on() {
+    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    $date = get_the_date('F Y'); // Format: Month Year
+
+    if (get_the_time('U') !== get_the_modified_time('U')) {
+        $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+        $date .= '(Updated: ' . get_the_modified_date('F Y') . ')'; // Format: Month Year
+    }
+
+    $time_string = sprintf($time_string,
+        esc_attr(get_the_date('c')),
+        esc_html($date),
+        esc_attr(get_the_modified_date('c')),
+        esc_html(get_the_modified_date())
+    );
+    return sprintf('<p class="posted-on">%s</p>', $time_string);
 }
 
 function heartland_hits_original_date_posted_on() {
