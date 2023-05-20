@@ -284,9 +284,9 @@ function register_social_media_settings( $wp_customize ) {
 
     $social_media_icons = array(
         'facebook'  => 'Facebook',
-        'twitter'   => 'Twitter',
-        'youtube'   => 'YouTube',
-        'instagram' => 'Instagram',
+//        'twitter'   => 'Twitter',
+//        'youtube'   => 'YouTube',
+//        'instagram' => 'Instagram',
     );
 
     foreach ( $social_media_icons as $icon => $label ) {
