@@ -22,7 +22,7 @@ function heartland_hits_custom_header_setup() {
 		apply_filters(
 			'heartland_hits_custom_header_args',
 			array(
-				'default-image'      => '',
+				'default-image'      => get_template_directory_uri() . '/default_images/default_image.jpg',
 				'default-text-color' => 'fff',
 				'width'              => 2000,
 				'height'             => 850,
