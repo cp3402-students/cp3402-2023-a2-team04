@@ -143,6 +143,11 @@ function heartland_hits_scripts() {
     // Google fonts TODO: Fix up enqueue and remove import statement from _typography variables
 //    wp_enqueue_style('heartland-hits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
+    // Bootstrap Enqueue
+    wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/bootstrap.min.css', array(), null);
+    // all scripts
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true );
+
     // Google icons
     wp_enqueue_style('heartland-hits-icons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
     wp_enqueue_style('heartland-hits-social-media-icons', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -249,24 +254,6 @@ function get_past_events() {
     return $events;
 }
 
-function heartland_hits_month_year_posted_on() {
-    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-    $date = get_the_date('F Y'); // Format: Month Year
-
-    if (get_the_time('U') !== get_the_modified_time('U')) {
-        $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-        $date .= '(Updated: ' . get_the_modified_date('F Y') . ')'; // Format: Month Year
-    }
-
-    $time_string = sprintf($time_string,
-        esc_attr(get_the_date('c')),
-        esc_html($date),
-        esc_attr(get_the_modified_date('c')),
-        esc_html(get_the_modified_date())
-    );
-    return sprintf('<p class="posted-on">%s</p>', $time_string);
-}
-
 function heartland_hits_original_date_posted_on() {
     $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
     $date = get_the_date('F Y'); // Format: Month Year
@@ -290,3 +277,33 @@ function heartland_hits_original_date_posted_on() {
 //
 //    printf('<p class="posted-on">%s</p>', $time_string);
 //}
+
+function theme_customizer_register($wp_customize) {
+    $wp_customize->add_section('button_settings', array(
+        'title' => 'Button Settings',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('login_button_link', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('login_button_link', array(
+        'label' => 'Login Button Link',
+        'section' => 'button_settings',
+        'type' => 'dropdown-pages',
+    ));
+
+    $wp_customize->add_setting('signup_button_link', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('signup_button_link', array(
+        'label' => 'Signup Button Link',
+        'section' => 'button_settings',
+        'type' => 'dropdown-pages',
+    ));
+}
+add_action('customize_register', 'theme_customizer_register');
