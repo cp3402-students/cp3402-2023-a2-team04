@@ -34,6 +34,7 @@ function heartland_hits_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'heartland_hits_custom_header_setup' );
 
+
 if ( ! function_exists( 'heartland_hits_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.

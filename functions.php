@@ -322,7 +322,7 @@ function theme_customizer_register($wp_customize) {
     $wp_customize->add_control('login_button_link', array(
         'label' => 'Login Button Link',
         'section' => 'button_settings',
-        'type' => 'dropdown pages',
+        'type' => 'dropdown-pages',
     ));
 
     $wp_customize->add_setting('signup_button_link', array(
@@ -333,7 +333,7 @@ function theme_customizer_register($wp_customize) {
     $wp_customize->add_control('signup_button_link', array(
         'label' => 'Signup Button Link',
         'section' => 'button_settings',
-        'type' => 'dropdown pages',
+        'type' => 'dropdown-pages',
     ));
 }
 add_action('customize_register', 'theme_customizer_register');
