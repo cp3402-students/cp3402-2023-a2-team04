@@ -421,7 +421,7 @@ h3 {
 }
 
 h4 {
-  color: #795d3c;
+  color: #fcb958;
 }
 
 h5, h6 {
@@ -433,7 +433,7 @@ h5 {
 }
 
 h6 {
-  color: #795d3c;
+  color: #fcb958;
 }
 
 p {
@@ -459,20 +459,6 @@ blockquote p {
 }
 blockquote a {
   text-decoration: none;
-}
-
-.wp-block-pullquote.is-style-solid-color blockquote {
-  font-size: 0.5em;
-}
-@media screen and (min-width: 601px) {
-  .wp-block-pullquote.is-style-solid-color blockquote {
-    font-size: 1em;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .wp-block-pullquote.is-style-solid-color blockquote {
-    font-size: 2em;
-  }
 }
 
 address {
@@ -546,7 +532,7 @@ ul {
 
 .site-main ul li::before {
   content: "•"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #795d3c;
+  color: #fcb958;
   font-weight: bold;
   display: inline-block;
   width: 1em;
@@ -588,10 +574,6 @@ figure {
   margin: 0;
 }
 
-.blocks-gallery-grid:not(.has-nested-images).alignleft, .blocks-gallery-grid:not(.has-nested-images).alignright, .wp-block-gallery:not(.has-nested-images).alignleft, .wp-block-gallery:not(.has-nested-images).alignright {
-  margin-right: 1em;
-}
-
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -613,38 +595,20 @@ table a {
 /* Links
 --------------------------------------------- */
 a {
-  color: #7e0904;
+  color: #4169e1;
   text-decoration: none;
 }
 a:visited {
-  color: #5f1814;
+  color: #800080;
 }
 a:hover, a:focus, a:active {
-  color: #cd8c48;
+  color: #5f1814;
 }
 a:focus {
   outline: thin dotted;
 }
 a:hover, a:active {
   outline: 0;
-}
-
-.entry-footer {
-  padding: 0.2em;
-}
-
-.edit-link, .cat-links, .tags-links, .comments-link {
-  padding: 0px 10px;
-  border-radius: 5px;
-  color: #6e9194;
-  background-color: #ffffff;
-  margin-right: 10px;
-}
-.edit-link a, .cat-links a, .tags-links a, .comments-link a {
-  color: #7e0904;
-}
-.edit-link a:hover, .cat-links a:hover, .tags-links a:hover, .comments-link a:hover {
-  color: #fcb958;
 }
 
 /* Forms
@@ -675,29 +639,6 @@ input[type=reset]:focus,
 input[type=submit]:active,
 input[type=submit]:focus {
   border-color: #aaa #bbb #bbb;
-}
-
-.wp-block-button {
-  padding: 0.2em;
-}
-.wp-block-button .wp-block-button__link {
-  background-color: #7e0904;
-}
-
-.is-style-outline {
-  padding: 0.2em;
-}
-
-.wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline > .wp-block-button__link {
-  border: 2px solid #7e0904;
-}
-
-.is-style-squared {
-  padding: 0.2em;
-}
-.is-style-squared a {
-  background-color: #7e0904;
-  border-radius: 0;
 }
 
 input[type=text],
@@ -903,7 +844,7 @@ textarea {
 .site-header {
   position: relative;
   padding: 1em;
-  background-color: #d2c1b4;
+  background-color: #cd8c48;
 }
 @media screen and (min-width: 414px) {
   .site-header {
@@ -948,7 +889,7 @@ textarea {
   color: #4b3025;
 }
 .site-title a:hover, .site-title a:focus {
-  color: #795d3c;
+  color: #fcb958;
 }
 @media screen and (min-width: 414px) {
   .site-title {
@@ -990,7 +931,7 @@ textarea {
   position: relative;
   padding: 1em;
   text-align: center;
-  background-color: #d2c1b4;
+  background-color: #fcb958;
 }
 @media screen and (min-width: 414px) {
   .site-footer {
@@ -1003,7 +944,6 @@ textarea {
 }
 .site-info a {
   text-decoration: none;
-  color: white;
 }
 
 .fa {
@@ -1037,21 +977,6 @@ textarea {
 .fa-instagram {
   background: #125688;
   color: white;
-}
-
-.footer-navigation ul a {
-  color: #7e0904;
-}
-
-.author-theme-footer-info {
-  font-size: 0.875em;
-  color: #666;
-}
-.author-theme-footer-info a {
-  color: #111;
-}
-.author-theme-footer-info a:visited {
-  color: #111;
 }
 
 /* Posts and pages
@@ -1143,10 +1068,6 @@ textarea {
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
   display: inline-block;
-}
-
-.wp-block-cover h1:not(.has-text-color), .wp-block-cover h2:not(.has-text-color), .wp-block-cover h3:not(.has-text-color), .wp-block-cover h4:not(.has-text-color), .wp-block-cover h5:not(.has-text-color), .wp-block-cover h6:not(.has-text-color), .wp-block-cover p:not(.has-text-color), .wp-block-cover-image h1:not(.has-text-color), .wp-block-cover-image h2:not(.has-text-color), .wp-block-cover-image h3:not(.has-text-color), .wp-block-cover-image h4:not(.has-text-color), .wp-block-cover-image h5:not(.has-text-color), .wp-block-cover-image h6:not(.has-text-color), .wp-block-cover-image p:not(.has-text-color) {
-  color: white;
 }
 
 /* Captions
