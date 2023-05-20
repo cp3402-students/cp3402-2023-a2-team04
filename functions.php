@@ -143,6 +143,10 @@ function heartland_hits_scripts() {
     // Google fonts TODO: Fix up enqueue and remove import statement from _typography variables
 //    wp_enqueue_style('heartland-hits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
+    // Bootstrap Enqueue
+    wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/bootstrap.min.css', array(), null);
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true );
+
     // Google icons
     wp_enqueue_style('heartland-hits-icons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
     wp_enqueue_style('heartland-hits-social-media-icons', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -303,3 +307,33 @@ function register_social_media_settings( $wp_customize ) {
     }
 }
 add_action( 'customize_register', 'register_social_media_settings' );
+
+function theme_customizer_register($wp_customize) {
+    $wp_customize->add_section('button_settings', array(
+        'title' => 'Button Settings',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('login_button_link', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('login_button_link', array(
+        'label' => 'Login Button Link',
+        'section' => 'button_settings',
+        'type' => 'dropdown-pages',
+    ));
+
+    $wp_customize->add_setting('signup_button_link', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+
+    $wp_customize->add_control('signup_button_link', array(
+        'label' => 'Signup Button Link',
+        'section' => 'button_settings',
+        'type' => 'dropdown-pages',
+    ));
+}
+add_action('customize_register', 'theme_customizer_register');
