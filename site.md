@@ -34,12 +34,12 @@ size of 5000-6000 people.
 For anyone taking over the development of the site, the main difference from standard Wordpress functionality comes from the plugins used.
 
 ### Plugin details:
- - `Advanced Custom Fields` (By: WP Engine, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/advanced-custom-fields/))
- - `Export Media Library` (By: Mass Edge Inc., [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/export-media-library/))
- - `Modula` (By: WPChill, [Wordpress.org Plugin Page](https://en-au.wordpress.org/plugins/modula-best-grid-gallery/))
- - `Show Current Template` (By: JOTAKI Taisuke, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/show-current-template/))
- - `Theme Check` (By: Theme Review Team, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/theme-check/))
- - `WordPress Importer` (By: wordpressdotorg, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/wordpress-importer/))
+- `Advanced Custom Fields` (By: WP Engine, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/advanced-custom-fields/))
+- `Export Media Library` (By: Mass Edge Inc., [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/export-media-library/))
+- `Modula` (By: WPChill, [Wordpress.org Plugin Page](https://en-au.wordpress.org/plugins/modula-best-grid-gallery/))
+- `Show Current Template` (By: JOTAKI Taisuke, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/show-current-template/))
+- `Theme Check` (By: Theme Review Team, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/theme-check/))
+- `WordPress Importer` (By: wordpressdotorg, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/wordpress-importer/))
 
 Details on plugin usages can be found below.
 
@@ -63,6 +63,28 @@ In the spirit of future-proofing the website, magazines were given the `Magazine
 For additional information and guides please refer to official [WordPress.org Create Posts](https://wordpress.org/documentation/article/wordpress-block-editor/) documentation.
 
 #### Add a new event (Advanced Custom Fields)
+Advanced Custom Fields, or `ACF`, was used to add event forms in the Events page. Two field groups were made; `Event` and `LineUp`.
+
+Event has 5 fields:
+- Date (Label: `Date:`, Name: `event_date`, Type: `Date Picker`)
+- Time (Label: `Time:`, Name: `event_time`, Type: `Time Picker`)
+- Venue (Label: `Venue:`, Name: `event_venue`, Type: `Text`)
+- Details (Label: `Details:`, Name: `event_details`, Type: `Text Area`)
+- Recurring (Label: `Recurring:`, Name: `event_recurring`, Type: `True/False`)
+
+Date ofcourse is the day of the event, time is the exact starting time, venue is the location where the event is being held, details are notes and information on things such as pricing, and recurring handles whether the event will occur again.
+
+LineUp has 2 fields:
+- Performer (Label: `Performer:`, Name: `performer_name`, Type: `Text`)
+- Performer Time (Label: `Performer Time:`, Name: `performer_time`, Type: `Time Picker`)
+
+Sometimes events wont have details for performers, however if they do they can be added with this group.
+
+Neither the Event nor LineUp field group should be changed at all.
+
+To use these, create a new page for an event, and in the edit page view, under `Summary` is an option for `Template`. You can choose from a few but for events specifically select `Single Event` to create an event, and `All Events` to create a page that shows all events. `All Events` shouldn't need to be used again as there is already a page for it (Events page). Selecting `Single Event` will show the two field groups in the page and developers can enter event information accordingly.
+
+The `Recurring` option will determine if the event is listed in the `Recurring Events` section of the `Events` page. Otherwise events will be listed based on their `event_date` and placed accordingly under `Upcoming Events` or `Past Events`.
 
 #### Add a new gallery (Modula plugin)
 Galleries are currently only present in the magazines but can be added anywhere in the site. The `Modula` plugin was used for this. Galleries created with it will display pictures in a grouped area and users can click on an image to expand and bring it forward on their screen. It also comes with a hover affect. Hovering over an image brings up a caption, which in this case is sometimes used to describe someone or something happening in the image. This caption is displayed at the bottom when an image is selected.
@@ -75,5 +97,13 @@ The caption displayed for an image can be added/changed by hovering over an imag
 
 Important: Galleries were not used for each and every image. If an event only has 1-3 images taken for it the default WordPress `Image` or `Media & Text` block is perfectly fine for this, and is in fact recommended. Modula should be used for events with 4 or more images.
 
+#### How to use Export Media Library plugin
+This plugin was used to easily export photos into a zip folder and move them.
 
-#### How to update x
+To use this, in the WordPress dashboard hover-over or click `Media` and then select `Export`. From here select `Download zip` to automatically download all media files.
+
+#### How to use Show Current Template plugin
+
+#### How to use Theme Check plugin
+
+#### How to use WordPress Importer plugin
