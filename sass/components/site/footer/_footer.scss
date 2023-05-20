@@ -15,6 +15,7 @@
   font-size: $font__size_body_secondary;
   a {
     text-decoration: none;
+    color: white;
   }
 }
 
@@ -34,24 +35,41 @@
 
 // Remove unwanted social media icons
 .fa-facebook {
-  background: #3B5998;
+  background: $color__icon-facebook;
   color: white;
 }
 
 .fa-twitter {
-  background: #55ACEE;
+  background: $color__icon-twitter;
   color: white;
 }
 
 .fa-youtube {
-  background: #bb0000;
+  background: $color__icon-youtube;
   color: white;
 }
 
 .fa-instagram {
-  background: #125688;
+  background: $color__icon-instagram;
   color: white;
 }
+
+.footer-navigation ul a {
+  color: $color__link;
+}
+
+.author-theme-footer-info {
+  font-size: $font__size_body_secondary;
+  color: $color_grey;
+  a {
+    color: $color_dark_grey;
+    &:visited {
+      color: $color_dark_grey;
+    }
+  }
+}
+
+
 
 
 

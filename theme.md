@@ -7,33 +7,44 @@ of the theme, what requires editing, design decisions, colours and other aspects
 
 **Custom Logo:**
 
-* A custom logo that can be added into the header.
+* A custom logo that can be added into the header. It can be set and customised through the site identity section.
 
 **Custom Header Image:**
 
-* A custom header image that can be added. It will not appear on smaller screens to save space and only appears on the
+* A custom header image can be added. It will not appear on smaller screens to save space and only appears on the
   front page.
 
 **Social Media Icons:**
 
-* Social media icons appear in the footer.
+* Social media icons appear in the footer. There is a custom menu in the customiser to be able to set the links to each
+  of the icons.
 
 **Header and Footer Navigation:**
 
-* A secondary navigation menu for shorter or custom navigation in the footer.
+* A main navigation menu can be placed in the header location. 
+* A secondary navigation menu for shorter or custom navigation in the footer. These display inline, so it is recommended
+  to make this shorter navigation for more important items.
 
-**Newsletter:**
+**All Newsletters:**
 
-* Any post that uses the 'newsletter' category will automatically use the Newsletter template. Formatted to display the
-  selected newsletter at the top and a list of other available newsletters from the past, organised by date. It is a
-  requirement that the post publication date must be set to the date that this newsletter corresponds to for this to
-  work.
+* A page created using the **'All Newsletters'** template will display the page title and content at the top, followed
+  by
+  auto-generated content from the single newsletters. It will show the latest newsletter post at the top and an archive
+  below listing all past newsletters. The archive is arranged in date order and grouped by the year, with the newest at
+  the top.
+
+**Single Newsletter:**
+
+* Any post that uses the **'newsletter'** category will automatically use the Single Newsletter template. Formatted to
+  display the selected newsletter at the top and a list of other available newsletters from the past, organised by date.
+  It is a requirement that the post publication date must be set to the date that this newsletter corresponds to for
+  this to work.
 
 [Newsletter Demonstration](https://youtu.be/k4tvlRfV1kY)
 
 **Single Event:**
 
-* Any page that uses the **single event** template will be set up for using an advanced custom field plugin to quickly
+* Any page that uses the **'Single Event'** template will be set up for using an advanced custom field plugin to quickly
   add and display the required event information. <br>
 
 _Set Up for Advanced Custom Fields Plugin:_
@@ -43,6 +54,7 @@ _Set Up for Advanced Custom Fields Plugin:_
     * event_time as time
     * event_venue as text
     * event_detail as text area
+    * event_recurring as true/false
 * Group 2 - Event LineUp
     * performer_name as text
     * performer_time as time
@@ -64,7 +76,9 @@ _Steps to create a single event:_
 
 **All Events:**
 
-* Any page that uses the **events** template will display a list of upcoming and past events. <br>
+* Any page that uses the **'All Events'** template will display a list of upcoming, recurring and past events. The
+  upcoming events are from the current date onwards, the recurring is where the event is ongoing (its details should be
+  specified in the details section), and past events are the events in the past.<br>
   _Steps to create all events page:_
     1. For a page that shows all events, create a new page.
     2. Change template to Events.
@@ -99,5 +113,8 @@ Any scss that impacts globally across the entire site should be added to the glo
 
 The Google fonts were attempted to be added to the functions.php enqueue, but only the first font would be accessible. A
 import statement in the typography file was used to use all fonts, but is not the ideal solution. This requires further
-attention. 
+attention.
+
+Responsive text has been attempted with media queries, but could be better handled with a mixin function. One had been
+started, but not completed.
 
