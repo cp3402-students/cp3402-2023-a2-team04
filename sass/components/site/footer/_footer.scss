@@ -2,17 +2,16 @@
 
 .site-footer {
   position: relative;
-  padding: 1em;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
   text-align: center;
   background-color: $color__background-footer;
-
-  @media screen and (min-width: $query__small) {
-    padding: 1em 2em;
-  }
 }
 
 .site-info {
   font-size: $font__size_body_secondary;
+
   a {
     text-decoration: none;
     color: white;

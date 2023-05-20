@@ -52,8 +52,7 @@
                         $heartland_hits_description = get_bloginfo('description', 'display');
                         if ($heartland_hits_description || is_customize_preview()) :
                             ?>
-                            <p class="site-description"><?php echo $heartland_hits_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-                                ?></p>
+                            <p class="site-description"><?php echo $heartland_hits_description; ?></p>
                         <?php endif; ?>
                     </div>
 
@@ -63,11 +62,23 @@
                     </div>
 
                 </div>
+            </div>
+        </div>
+
+        <nav id="site-navigation" class="main-navigation">
+            <div class="container d-flex justify-content-center">
+
                 <div class="row">
-                    <nav id="site-navigation" class="main-navigation">
+
+                    <div class="col-12 d-flex justify-content-center">
                         <button class="menu-toggle" aria-controls="primary-menu"
-                                aria-expanded="false"><span class="material-symbols-outlined">menu</span>
-                            <?php esc_html_e('Menu', 'heartland-hits'); ?></button>
+                                aria-expanded="false">
+                            <i class="material-symbols-outlined"></i>
+                            <?php esc_html_e('Menu', 'heartland-hits'); ?>
+                        </button>
+                    </div>
+
+                    <div class="col-12 text-center">
                         <?php
                         wp_nav_menu(
                             array(
@@ -76,8 +87,8 @@
                             )
                         );
                         ?>
-                    </nav>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
