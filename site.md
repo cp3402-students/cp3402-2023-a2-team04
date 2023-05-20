@@ -54,11 +54,11 @@ If it is a top-level page it will be automatically added to the header and foote
 For additional information and guides please refer to official [WordPress.org Create Pages](https://wordpress.org/documentation/article/create-pages/) documentation.
 
 #### Add a new post
-Currently only the `monthly magazines` have been created as posts. Everything else has either been created in/as a page or event with the Advanced Custom Fields plugin.
+Currently only the `monthly newsletters` have been created as posts. Everything else has either been created in/as a page or event with the Advanced Custom Fields plugin.
 
 As with Pages, very little has been changed with Posts. Creating them can be done through the dashboard selecting `Posts` and then `Add new`.
 
-In the spirit of future-proofing the website, magazines were given the `Magazine` category. This should be applied to any future magazines. If in the future other types of posts are added, they can be given their own category.
+In the spirit of future-proofing the website, newsletters were given the `newsletter` category. This should be applied to any future newsletters. If in the future other types of posts are added, they can be given their own category.
 
 For additional information and guides please refer to official [WordPress.org Create Posts](https://wordpress.org/documentation/article/wordpress-block-editor/) documentation.
 
@@ -87,7 +87,7 @@ To use these, create a new page for an event, and in the edit page view, under `
 The `Recurring` option will determine if the event is listed in the `Recurring Events` section of the `Events` page. Otherwise events will be listed based on their `event_date` and placed accordingly under `Upcoming Events` or `Past Events`.
 
 #### Add a new gallery (Modula plugin)
-Galleries are currently only present in the magazines but can be added anywhere in the site. The `Modula` plugin was used for this. Galleries created with it will display pictures in a grouped area and users can click on an image to expand and bring it forward on their screen. It also comes with a hover affect. Hovering over an image brings up a caption, which in this case is sometimes used to describe someone or something happening in the image. This caption is displayed at the bottom when an image is selected.
+Galleries are currently only present in the newsletters but can be added anywhere in the site. The `Modula` plugin was used for this. Galleries created with it will display pictures in a grouped area and users can click on an image to expand and bring it forward on their screen. It also comes with a hover affect. Hovering over an image brings up a caption, which in this case is sometimes used to describe someone or something happening in the image. This caption is displayed at the bottom when an image is selected.
 
 Once installed Modula will appear in the Dashboard. Selecting it will show all existing galleries and an option at the top to `Add new`. Selecting `Add new` will bring up a page to name the gallery and a section underneath where images can be dragged and dropped. They will be uploaded individually one by one.
 
