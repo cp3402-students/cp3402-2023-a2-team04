@@ -15,9 +15,9 @@
         <div class="site-info">
 
             <a href="<?php echo esc_url(get_theme_mod('social_media_facebook_link')); ?>" class="fa fa-facebook"></a>
-            <a href="<?php echo esc_url(get_theme_mod('social_media_twitter_link')); ?>" class="fa fa-twitter"></a>
-            <a href="<?php echo esc_url(get_theme_mod('social_media_youtube_link')); ?>" class="fa fa-youtube"></a>
-            <a href="<?php echo esc_url(get_theme_mod('social_media_instagram_link')); ?>" class="fa fa-instagram"></a>
+<!--            <a href="--><?php //echo esc_url(get_theme_mod('social_media_twitter_link')); ?><!--" class="fa fa-twitter"></a>-->
+<!--            <a href="--><?php //echo esc_url(get_theme_mod('social_media_youtube_link')); ?><!--" class="fa fa-youtube"></a>-->
+<!--            <a href="--><?php //echo esc_url(get_theme_mod('social_media_instagram_link')); ?><!--" class="fa fa-instagram"></a>-->
 
             <!-- Footer Navigation Menu-->
             <nav class="footer-navigation">
