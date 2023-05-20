@@ -1,0 +1,63 @@
+a {
+  color: $color__link;
+  text-decoration: none;
+
+  &:visited {
+    color: $color__link-visited;
+
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__link-hover;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+.entry-footer {
+  padding: 0.2em;
+}
+
+%all-links {
+  padding: 0px 10px;
+  border-radius: 5px;
+  color: $color__entry-text;
+  background-color: $color__entry-main;
+  margin-right: 10px;
+  a {
+    color: $color__entry-secondary;
+
+    &:hover {
+      color: $color_beige;
+    }
+  }
+}
+
+.comments-link {
+  @extend %all-links;
+  //background-color: red;
+}
+
+.tags-links {
+  @extend %all-links;
+  //background-color: blue;
+}
+
+.cat-links {
+  @extend %all-links;
+  //background-color: green;
+}
+
+.edit-link {
+  @extend %all-links;
+  //background-color: yellow;
+}

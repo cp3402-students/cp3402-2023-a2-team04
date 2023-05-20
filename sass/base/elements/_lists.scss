@@ -1,0 +1,38 @@
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+.site-main {
+	ul li::before {
+		content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+		color: $color__heading-light;
+		font-weight: bold;
+		display: inline-block;
+		width: 1em;
+		margin-left: -1em;
+	}
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+	color: $color__text-highlight;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
