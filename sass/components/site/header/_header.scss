@@ -77,6 +77,11 @@
     .left-header-column {
       text-align: right;
 
+      .btn {
+        background-color: $color_dark_red;
+        border-color: $color_dark_red;
+      }
+
       .login-btn {
         background-color: $color_grey;
         border-color: $color_grey;
