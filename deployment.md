@@ -449,6 +449,59 @@ docker cp . wordpress:/var/www/html/wp-content/themes/heartlandhits
 
 ### Live Server
 
-GitHub branch name: main
+#### Installation and configuration of the Live Server is identical to that of the Staging server with the following changes:
 
-## Testing
+1. During the configuration of the Jenkins Job under `Branches to Build` set `Branch Specifier` to `*/main`
+2. Under `Build Steps` use the below code in the `Execute Shell` command window
+
+#### Execute Shell code:
+
+```shell
+# Set the PATH
+export PATH=$PATH:/usr/bin/
+
+REPO_URL=https://github.com/cp3402-students/cp3402-2023-a2-team04
+BRANCH=main
+
+# Clone the repository
+if [ -d .git ]; then
+  git fetch --all
+  git reset --hard origin/$BRANCH
+else
+  git clone --branch $BRANCH $REPO_URL
+fi
+
+# Move to the correct directory
+cd /var/jenkins_home/workspace/wordpress
+
+# Remove any files that were deleted from the repository
+git clean -df
+docker exec wordpress sh -c 'rm -rf /var/www/html/wp-content/themes/heartlandhits/*'
+
+# Copy the files to the Wordpress container
+docker cp . wordpress:/var/www/html/wp-content/themes/heartlandhits
+```
+### Staging to Live Migration
+
+#### Code updates to theme should always be done through version control as the automation is set up to run through Github.
+
+### Database Migration:
+#### Plugin Configuration
+For migrating the database we are using the plugin `UpdraftPlus - Backup/Restore`
+1. Log in to WordPress Admin on the staging server and download/activate `UpdraftPlus - Backup/Restore` if it is not installed already. You will need this plugin installed on the Live server as well if it is not already
+2. On the staging server, navigate to the `plugins` page and click `settings` under the `UpdraftPlus` plugin.
+3. Once in the `UpdraftPlus` home-screen select the `settings` tab where you will find the remote storage options. If you do not want to use remote storage, skip to step 6.
+4. Chose your method of remote storage and authenticate it. Once you are returned to this page you should see the message saying that it is authenticated
+5. Read over the options for files included in the backup and when you are done scroll to the bottom and `Save Changes`
+6. Head back to the `Backup / Restore` tab. Select `Backup Now` and chose the required options in the context window. Once desired options are selected press `Backup now` to create the backup
+7. Move over to the live server and configure the remote storage following `steps 3-5`
+8. After configuring remote storage you should see under `Existing backups` on the Updraft home-page a new backup with the data and the time it was taken. This should be the same backup on both `Staging` and `Live` servers.
+
+#### Migrating the Database
+1. On the Live server head back to the `home-page` for the `UpdraftPlus` plugin
+2. Tick the box to the left of the backup that you want to restore and press `Restore`
+3. Tick the `Database` box only and press `Next`
+4. Once the process completes the Live server will now have the wrong URL, this will need to be changed in the database manager `MyPHPAdmin`
+5. Press the `+` next to the `Wordpress` database and then select `wp_options`
+6. Under the `option_value` column update the URL values for `sireurl` and `home` to the Live server, these will be pointing at the staging server as we imported the staging server database
+7. Refresh the page to confirm the URLs saved and log in to the WordPress site to confirm it worked
