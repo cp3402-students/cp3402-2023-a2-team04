@@ -950,6 +950,10 @@ textarea {
 .header-elements .row .left-header-column {
   text-align: right;
 }
+.header-elements .row .left-header-column .btn {
+  background-color: #7e0904;
+  border-color: #7e0904;
+}
 .header-elements .row .left-header-column .login-btn {
   background-color: #666;
   border-color: #666;
