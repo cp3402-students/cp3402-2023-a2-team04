@@ -529,8 +529,8 @@ body {
 
 hr {
   height: 2px;
-  background-color: #fcb958;
-  background-image: linear-gradient(to right, #fcb958, #5f1814, #fcb958);
+  background-color: #4b3025;
+  background-image: linear-gradient(to right, #4b3025, #fcb958, #4b3025);
   border: none;
   margin: 20px 0;
 }
@@ -766,17 +766,11 @@ textarea {
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-  display: block;
-  width: 100%;
-  padding: 0.2em 0;
+  font-weight: 600;
+  font-family: "Kalam", "Fuzzy Bubbles", "Bradley Hand", cursive;
 }
-@media screen and (min-width: 1280px) {
-  .main-navigation {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 60%;
-  }
+.main-navigation .current-menu-item {
+  background-color: white;
 }
 .main-navigation ul {
   display: none;
@@ -823,7 +817,7 @@ textarea {
 .main-navigation a {
   display: block;
   text-decoration: none;
-  padding: 0 0.2em;
+  padding: 0.6rem 1.4rem;
 }
 /* Small menu. */
 .menu-toggle .material-symbols-outlined {
@@ -868,14 +862,14 @@ textarea {
 
 .footer-navigation ul {
   display: flex;
-  list-style: none;
+  list-style-type: none;
   justify-content: center;
   margin: 0;
   padding: 0;
 }
 .footer-navigation ul a {
   display: block;
-  padding: 1em;
+  padding: 5px;
   text-decoration: none;
 }
 .footer-navigation ul a:hover {
@@ -886,6 +880,10 @@ textarea {
 --------------------------------------------- */
 /* Header
 --------------------------------------------- */
+.site-header {
+  background-color: #d2c1b4;
+}
+
 .header-image {
   max-height: 60vh;
   overflow: hidden;
@@ -900,85 +898,63 @@ textarea {
   }
 }
 
-.site-header {
-  position: relative;
-  padding: 1em;
-  background-color: #d2c1b4;
-}
-@media screen and (min-width: 414px) {
-  .site-header {
-    padding: 1em 2em;
+@media screen and (min-width: 1280px) {
+  .site-navigation {
+    max-width: 40%;
   }
 }
-
-.site-branding {
-  min-height: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+.header-elements {
+  background-color: #d2c1b4;
+  font-family: "Kalam", "Fuzzy Bubbles", "Bradley Hand", cursive;
 }
-.site-branding .custom-logo-link {
+@media screen and (min-width: 414px) {
+  .header-elements {
+    padding: 1em 1em;
+  }
+}
+.header-elements .row .brand-logo .custom-logo-link {
   margin-right: 1em;
 }
-.site-branding .custom-logo-link img {
+.header-elements .row .brand-logo .custom-logo-link img {
   height: 100px;
   width: auto;
 }
-.site-branding .custom-logo-link .site-branding-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100px;
-}
-@media screen and (min-width: 414px) {
-  .site-branding .custom-logo-link {
-    margin-right: 1em;
-  }
-}
-
-.site-title {
+.header-elements .row .brand-title .site-title {
   font-size: 1.25em;
   margin: 0;
   padding: 0;
   font-weight: 700;
 }
-.site-title a {
+.header-elements .row .brand-title .site-title a {
   text-decoration: none;
   color: #4b3025;
 }
-.site-title a:hover, .site-title a:focus {
+.header-elements .row .brand-title .site-title a:hover, .header-elements .row .brand-title .site-title a:focus {
   color: #795d3c;
 }
 @media screen and (min-width: 414px) {
-  .site-title {
+  .header-elements .row .brand-title .site-title {
     font-size: 1.375em;
   }
 }
-
-.site-description {
+.header-elements .row .brand-title .site-description {
   margin: 0;
   font-size: 1.125em;
   padding: 0.1em 0;
 }
 @media screen and (max-width: 414px) {
-  .site-description {
+  .header-elements .row .brand-title .site-description {
     display: none;
   }
 }
-
-@media screen and (min-width: 1280px) {
-  .site-header {
-    display: flex;
-    justify-content: space-between;
-  }
-  .site-branding {
-    max-width: 40%;
-  }
-  .site-navigation {
-    max-width: 40%;
-  }
+.header-elements .row .left-header-column {
+  text-align: right;
 }
+.header-elements .row .left-header-column .login-btn {
+  background-color: #666;
+  border-color: #666;
+}
+
 .menu-toggle {
   border-radius: 10px;
   margin-left: auto;
@@ -988,14 +964,11 @@ textarea {
 --------------------------------------------- */
 .site-footer {
   position: relative;
-  padding: 1em;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
   text-align: center;
   background-color: #d2c1b4;
-}
-@media screen and (min-width: 414px) {
-  .site-footer {
-    padding: 1em 2em;
-  }
 }
 
 .site-info {
