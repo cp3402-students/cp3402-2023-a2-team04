@@ -40,11 +40,12 @@ For anyone taking over the development of the site, the main difference from sta
 - `Show Current Template` (By: JOTAKI Taisuke, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/show-current-template/))
 - `Theme Check` (By: Theme Review Team, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/theme-check/))
 - `WordPress Importer` (By: wordpressdotorg, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/wordpress-importer/))
+- `Forminator` (By: WPMU DEV, [WordPress.org Plugin Page](https://wordpress.org/plugins/forminator/))
+- `Feed Them Social` (By: SlickRemix, [WordPress.org Plugin Page](https://wordpress.org/plugins/feed-them-social/))
 
 Details on plugin usages can be found below.
 
 ### Updating the site
-
 
 #### Add a new page
 Adding a new page is the same as any default WordPress site. Simply in the dashboard hover over `Pages` and select `Add new`.
@@ -103,7 +104,32 @@ This plugin was used to easily export photos into a zip folder and move them.
 To use this, in the WordPress dashboard hover-over or click `Media` and then select `Export`. From here select `Download zip` to automatically download all media files.
 
 #### How to use Show Current Template plugin
+This plugin was used in development to view which parts of the theme were used on each individual page.
+
+To use, when viewing a page, the developer can click the Show Current Template tab in the top bar to view the parts.
 
 #### How to use Theme Check plugin
+This is used to check the Theme files for problems that would be against the Theme standards.
+
+To use the plugin, from within the WordPress admin dashboard, click the Appearances menu and choose Theme Checker. From there, the developer chooses the theme and clicks check.
+The plugin then provides a log of any problems or suggestions to fix in the theme.
 
 #### How to use WordPress Importer plugin
+Exports the WordPress content to an XML file for importing in another WordPress site.
+
+This plugin is the WordPress plugin for importing and exporting content. To use, go to the Tools menu and use Import or Export and follow the instructions.
+
+#### How to use Forminator plugin
+This plugin was used to create the contact, registration and login forms.
+
+To use this plugin, in the WordPress dashboard, head to the Forminator menu. Under the Forms section, click the create button.
+
+The plugin provides instructions on how to add fields to the form, with most options finding the default option adequate.
+
+#### How to use Feed Them Social plugin
+From within the WordPress admin dashboard, choose the FT Social menu. Then click the Add New Feed button. Depending on the feed that's required, choose which Social platform.
+
+Admin will then need to add the Access Token provided by the Social media platform when accessing the account. Following the steps, user needs to choose the group or page that will
+be embedded in the WordPress page.
+
+Once the connections are set within the plugin. The user needs to add the shortcode to the page that will show the embedded Social feed.
