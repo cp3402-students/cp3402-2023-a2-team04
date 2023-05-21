@@ -33,7 +33,7 @@ function heartland_hits_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'heartland-hits-style',
+				'stylesheet' => 'heartlandhits-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',

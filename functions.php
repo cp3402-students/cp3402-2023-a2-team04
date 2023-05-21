@@ -24,9 +24,9 @@ function heartland_hits_setup() {
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on Heartland Hits, use a find and replace
-		* to change 'heartland-hits' to the name of your theme in all the template files.
+		* to change 'heartlandhits' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'heartland-hits', get_template_directory() . '/languages');
+	load_theme_textdomain( 'heartlandhits', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,8 +49,8 @@ function heartland_hits_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary' => esc_html__( 'Header', 'heartland-hits' ),
-			'secondary' => esc_html__( 'Footer', 'heartland-hits' ),
+			'primary' => esc_html__( 'Header', 'heartlandhits' ),
+			'secondary' => esc_html__( 'Footer', 'heartlandhits' ),
 		)
 	);
 
@@ -123,9 +123,9 @@ add_action( 'after_setup_theme', 'heartland_hits_content_width', 0 );
 function heartland_hits_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'heartland-hits' ),
+			'name'          => esc_html__( 'Sidebar', 'heartlandhits' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'heartland-hits' ),
+			'description'   => esc_html__( 'Add widgets here.', 'heartlandhits' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -141,21 +141,22 @@ add_action( 'widgets_init', 'heartland_hits_widgets_init' );
 function heartland_hits_scripts() {
 
     // Google fonts TODO: Fix up enqueue and remove import statement from _typography variables
-//    wp_enqueue_style('heartland-hits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+//    wp_enqueue_style('heartlandhits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
     // Bootstrap Enqueue
-    wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/bootstrap.min.css', array(), null);
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true );
+    wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.min.css', array(), null);
+    wp_enqueue_script( 'bootstrap-bundle-js', get_template_directory_uri() . '/bootstrap/bootstrap.bundle.min.js', array(), '0.1', true );
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/bootstrap.min.js', array(), null, true );
 
     // Google icons
-    wp_enqueue_style('heartland-hits-icons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
-    wp_enqueue_style('heartland-hits-social-media-icons', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+    wp_enqueue_style('heartlandhits-icons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+    wp_enqueue_style('heartlandhits-social-media-icons', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
     // Style
-	wp_enqueue_style( 'heartland-hits-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'heartland-hits-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'heartlandhits-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'heartlandhits-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'heartland-hits-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'heartlandhits-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -205,9 +206,9 @@ add_filter( 'single_template', 'custom_category_template' );
 // Allow the theme to use page templates, list any available templates below
 function heartland_hits_custom_page_templates( $templates ) {
     // This is where you list the template available
-    $templates['single-event.php'] = __( 'Single Event', 'heartland-hits' );
-    $templates['page-events.php'] = __( 'All Events', 'heartland-hits' );
-    $templates['page-newsletters.php'] = __( 'All Newsletters', 'heartland-hits' );
+    $templates['single-event.php'] = __( 'Single Event', 'heartlandhits' );
+    $templates['page-events.php'] = __( 'All Events', 'heartlandhits' );
+    $templates['page-newsletters.php'] = __( 'All Newsletters', 'heartlandhits' );
     return $templates;
 }
 add_filter( 'theme_page_templates', 'heartland_hits_custom_page_templates' );
@@ -282,7 +283,7 @@ function heartland_hits_original_date_posted_on() {
 // Add to customiser to add links to the social media icons in footer
 function register_social_media_settings( $wp_customize ) {
     $wp_customize->add_section( 'social_media_links', array(
-        'title'    => __( 'Social Media Links', 'heartland-hits' ),
+        'title'    => __( 'Social Media Links', 'heartlandhits' ),
         'priority' => 90,
     ) );
 
@@ -299,7 +300,7 @@ function register_social_media_settings( $wp_customize ) {
         ) );
 
         $wp_customize->add_control( 'social_media_' . $icon . '_link', array(
-            'label'    => __( $label . ' Link', 'heartland-hits' ),
+            'label'    => __( $label . ' Link', 'heartlandhits' ),
             'section'  => 'social_media_links',
             'type'     => 'text',
             'priority' => 10,
@@ -316,7 +317,7 @@ function theme_customizer_register($wp_customize) {
 
     $wp_customize->add_setting('login_button_link', array(
         'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
+        'sanitize_callback' => 'absint',
     ));
 
     $wp_customize->add_control('login_button_link', array(
@@ -327,7 +328,7 @@ function theme_customizer_register($wp_customize) {
 
     $wp_customize->add_setting('signup_button_link', array(
         'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
+        'sanitize_callback' => 'absint',
     ));
 
     $wp_customize->add_control('signup_button_link', array(

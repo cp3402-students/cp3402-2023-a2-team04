@@ -56,6 +56,6 @@ function heartland_hits_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function heartland_hits_customize_preview_js() {
-	wp_enqueue_script( 'heartland-hits-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
+	wp_enqueue_script( 'heartlandhits-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'heartland_hits_customize_preview_js' );
