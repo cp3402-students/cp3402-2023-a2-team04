@@ -104,10 +104,20 @@ This plugin was used to easily export photos into a zip folder and move them.
 To use this, in the WordPress dashboard hover-over or click `Media` and then select `Export`. From here select `Download zip` to automatically download all media files.
 
 #### How to use Show Current Template plugin
+This plugin was used in development to view which parts of the theme were used on each individual page.
+
+To use, when viewing a page, the developer can click the Show Current Template tab in the top bar to view the parts.
 
 #### How to use Theme Check plugin
+This is used to check the Theme files for problems that would be against the Theme standards.
+
+To use the plugin, from within the WordPress admin dashboard, click the Appearances menu and choose Theme Checker. From there, the developer chooses the theme and clicks check.
+The plugin then provides a log of any problems or suggestions to fix in the theme.
 
 #### How to use WordPress Importer plugin
+Exports the WordPress content to an XML file for importing in another WordPress site.
+
+This plugin is the WordPress plugin for importing and exporting content. To use, go to the Tools menu and use Import or Export and follow the instructions.
 
 #### How to use Forminator plugin
 This plugin was used to create the contact, registration and login forms.
