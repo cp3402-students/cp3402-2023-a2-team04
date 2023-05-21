@@ -390,6 +390,7 @@ button,
 input,
 select,
 optgroup,
+p,
 textarea {
   color: #000000;
   font-family: "Open Sans", Verdana, -apple-system, BlinkMacSystemFont, Helvetica, Tahoma, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -881,7 +882,8 @@ textarea {
 /* Header
 --------------------------------------------- */
 .site-header {
-  background-color: #d2c1b4;
+  background-color: #c2a08c;
+  box-shadow: 0 2px 5px #888888;
 }
 
 .header-image {
@@ -904,7 +906,7 @@ textarea {
   }
 }
 .header-elements {
-  background-color: #d2c1b4;
+  background-color: #c2a08c;
   font-family: "Kalam", "Fuzzy Bubbles", "Bradley Hand", cursive;
 }
 @media screen and (min-width: 414px) {
@@ -974,7 +976,7 @@ textarea {
   width: 100%;
   padding: 10px;
   text-align: center;
-  background-color: #d2c1b4;
+  background-color: #c2a08c;
 }
 
 .site-info {
