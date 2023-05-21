@@ -144,8 +144,8 @@ function heartland_hits_scripts() {
 //    wp_enqueue_style('heartland-hits-fonts', 'https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
     // Bootstrap Enqueue
-    wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/bootstrap.min.css', array(), null);
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), null, true );
+    wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.min.css', array(), null);
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/bootstrap.bundle.min.js', array(), '0.1', true );
 
     // Google icons
     wp_enqueue_style('heartland-hits-icons', 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
