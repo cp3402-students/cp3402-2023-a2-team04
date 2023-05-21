@@ -1,0 +1,161 @@
+.main-navigation {
+  font-weight: 600;
+  font-family: $font__headings;
+
+  .current-menu-item {
+    background-color: lighten($color__background-body, 5);
+  }
+
+  //@media screen and (min-width: $query__large) {
+  //  bottom: 0;
+  //  right: 0;
+  //  width: 60%;
+  //}
+
+  ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    justify-content: center;
+
+    ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 100%;
+      left: -999em;
+      z-index: 99999;
+
+      ul {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        width: auto;
+        display: block;
+        left: 0;
+        top: 0;
+      }
+
+      li {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        background-color: lighten($color__heading-mid, 10%);
+        position: relative;
+
+        &:hover > ul,
+        &.focus > ul {
+          display: block;
+          left: auto;
+        }
+      }
+
+      a {
+        width: 100px;
+        max-width: 200px;
+      }
+
+      :hover > a,
+      .focus > a {
+      }
+
+      a:hover,
+      a.focus {
+      }
+    }
+
+    li:hover > ul,
+    li.focus > ul {
+      left: auto;
+    }
+  }
+
+  li {
+    position: relative;
+    font-weight: bold;
+
+    &:hover > a,
+    &.focus > a {
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a,
+  .current-menu-ancestor > a {
+  }
+}
+
+/* Small menu. */
+.menu-toggle {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 37.5em) {
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation ul {
+    display: flex;
+  }
+}
+
+// Comment and Post Navigation
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+  .site-main & {
+    margin: 0 0 1.5em;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-previous {
+    flex: 1 0 50%;
+  }
+
+  .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+  }
+}
+
+// Footer Navigation
+.footer-navigation {
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: block;
+      padding: 5px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

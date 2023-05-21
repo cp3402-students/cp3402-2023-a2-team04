@@ -1,0 +1,81 @@
+// Variables by colour
+$color_white: #ffffff;
+$color_black: #000000;
+$color_maroon: #5f1814;
+$color_dark_red: #7e0904;
+$color_beige: #fcb958;
+$color_brown: #4b3025;
+$color_tan: #cd8c48;
+$color_grey: #666;
+$color_mid_grey: #404040;
+$color_dark_grey: #111;
+$color_off_white: #d2c1b4;
+$color_off_brown: #948071;
+$color_bull_horn_brown: #795d3c;
+$color_semi_transparent_dark: rgba(17, 17, 17, 0.54);
+$color_bluish_grey_cyan: #9db5b7;
+$color_dark_grey_cyan: #6e9194;
+
+$color_mid_blue: #21759b;
+$color_blue_royal: #4169e1;
+$color_purple_royal: #800080;
+
+// Variables by purpose
+
+// Backgrounds
+$color__background-body: $color_white;
+$color__background-screen: #f1f1f1;
+$color__background-hr: $color_beige;
+$color__background-button: #e6e6e6;
+$color__background-pre: #fff9c0;
+$color__background-code: $color_grey;
+$color__background-quote: $color_tan;
+$color__background-ins: #fff9c0;
+$color__background-header: $color_off_white;
+$color__background-footer: $color_off_white;
+
+// Text
+$color__text-screen: $color_mid_blue;
+$color__text-input: $color_grey;
+$color__text-input-focus: $color_dark_grey;
+$color__text-main: $color_black;
+$color__text-code: $color_brown;
+$color__text-highlight: $color_maroon;
+
+// Links
+$color__link: $color_dark_red;
+$color__link-visited: $color_maroon;
+$color__link-hover: $color_tan;
+
+// Borders
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: $color_grey;
+
+// Headings
+$color__heading-very-dark: $color_black;
+$color__heading-dark: $color_brown;
+$color__heading-mid: $color_tan;
+$color__heading-light: $color_bull_horn_brown;
+
+// Tables
+$color__table-background: $color_white;
+$color__table-header-background: $color_tan;
+$color__table-header-text: $color_white;
+$color__table-data: $color_beige;
+
+// Social Media Icons
+$color__icon-facebook: #3B5998;
+$color__icon-twitter: #55ACEE;
+$color__icon-youtube: #bb0000;
+$color__icon-instagram: #125688;
+
+// Buttons
+$color__button-main: $color_dark_red;
+
+// Entry Footer: Categories, Tags, Edit and Comment Links
+$color__entry-main: $color_white;
+$color__entry-secondary: $color_dark_red;
+$color__entry-text: $color_dark_grey_cyan;

@@ -1,0 +1,7 @@
+hr {
+	height: 2px;
+	background-color: $color_brown;
+	background-image: linear-gradient(to right, $color_brown, $color__background-hr, $color_brown);
+	border: none;
+	margin: 20px 0;
+}
