@@ -57,8 +57,8 @@
                     </div>
 
                     <div class="col-md-6 ml-auto left-header-column">
-                        <button type="button" class="btn btn-danger login-btn btn-rounded" onClick="location.href='<?php echo esc_url(get_theme_mod('login_button_link')); ?>'">Login</button>
-                        <button type="button" class="btn btn-danger btn-rounded" onClick="location.href='<?php echo esc_url(get_theme_mod('signup_button_link')); ?>'">Sign Up</button>
+                        <a href="<?php echo esc_url(get_theme_mod('login_button_link')); ?>" class="btn btn-danger login-btn btn-rounded">Login</a>
+                        <a href="<?php echo esc_url(get_theme_mod('signup_button_link')); ?>" class="btn btn-danger login-btn btn-rounded">Sign Up</a>
                     </div>
 
                 </div>
