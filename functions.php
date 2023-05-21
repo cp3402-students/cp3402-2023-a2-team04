@@ -317,7 +317,7 @@ function theme_customizer_register($wp_customize) {
 
     $wp_customize->add_setting('login_button_link', array(
         'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
+        'sanitize_callback' => 'absint',
     ));
 
     $wp_customize->add_control('login_button_link', array(
@@ -328,7 +328,7 @@ function theme_customizer_register($wp_customize) {
 
     $wp_customize->add_setting('signup_button_link', array(
         'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
+        'sanitize_callback' => 'absint',
     ));
 
     $wp_customize->add_control('signup_button_link', array(

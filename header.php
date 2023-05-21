@@ -57,8 +57,25 @@
                     </div>
 
                     <div class="col-md-6 ml-auto left-header-column">
-                        <button type="button" class="btn btn-danger login-btn btn-rounded" onClick="location.href='<?php echo esc_url(get_theme_mod('login_button_link')); ?>'">Login</button>
-                        <button type="button" class="btn btn-danger btn-rounded" onClick="location.href='<?php echo esc_url(get_theme_mod('signup_button_link')); ?>'">Sign Up</button>
+                        <?php
+                        $login_button_link = get_theme_mod('login_button_link');
+                        if ($login_button_link) {
+                            $login_url = get_permalink($login_button_link);
+                            ?>
+                            <a href="<?php echo esc_url($login_url); ?>" class="btn btn-danger login-btn btn-rounded">Login</a>
+                            <?php
+                        }
+                        ?>
+
+                        <?php
+                        $signup_button_link = get_theme_mod('signup_button_link');
+                        if ($signup_button_link) {
+                            $signup_url = get_permalink($signup_button_link);
+                            ?>
+                            <a href="<?php echo esc_url($signup_url); ?>" class="btn btn-danger btn-rounded">Sign Up</a>
+                            <?php
+                        }
+                        ?>
                     </div>
 
                 </div>

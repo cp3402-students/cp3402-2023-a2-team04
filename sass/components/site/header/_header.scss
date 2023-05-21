@@ -1,6 +1,7 @@
 // Site Header
 .site-header {
   background-color: $color__background-header;
+  box-shadow: 0 2px 5px #888888;
 }
 
 .header-image {
@@ -80,11 +81,13 @@
       .btn {
         background-color: $color_dark_red;
         border-color: $color_dark_red;
+        color: $color_white;
       }
 
       .login-btn {
         background-color: $color_grey;
         border-color: $color_grey;
+        color: $color_white;
       }
     }
   }
