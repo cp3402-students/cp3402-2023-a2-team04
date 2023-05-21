@@ -40,11 +40,12 @@ For anyone taking over the development of the site, the main difference from sta
 - `Show Current Template` (By: JOTAKI Taisuke, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/show-current-template/))
 - `Theme Check` (By: Theme Review Team, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/theme-check/))
 - `WordPress Importer` (By: wordpressdotorg, [WordPress.org Plugin Page](https://en-au.wordpress.org/plugins/wordpress-importer/))
+- `Forminator` (By: WPMU DEV, [WordPress.org Plugin Page](https://wordpress.org/plugins/forminator/))
+- `Feed Them Social` (By: SlickRemix, [WordPress.org Plugin Page](https://wordpress.org/plugins/feed-them-social/))
 
 Details on plugin usages can be found below.
 
 ### Updating the site
-
 
 #### Add a new page
 Adding a new page is the same as any default WordPress site. Simply in the dashboard hover over `Pages` and select `Add new`.
@@ -107,3 +108,18 @@ To use this, in the WordPress dashboard hover-over or click `Media` and then sel
 #### How to use Theme Check plugin
 
 #### How to use WordPress Importer plugin
+
+#### How to use Forminator plugin
+This plugin was used to create the contact, registration and login forms.
+
+To use this plugin, in the WordPress dashboard, head to the Forminator menu. Under the Forms section, click the create button.
+
+The plugin provides instructions on how to add fields to the form, with most options finding the default option adequate.
+
+#### How to use Feed Them Social plugin
+From within the WordPress admin dashboard, choose the FT Social menu. Then click the Add New Feed button. Depending on the feed that's required, choose which Social platform.
+
+Admin will then need to add the Access Token provided by the Social media platform when accessing the account. Following the steps, user needs to choose the group or page that will
+be embedded in the WordPress page.
+
+Once the connections are set within the plugin. The user needs to add the shortcode to the page that will show the embedded Social feed.

@@ -12,7 +12,7 @@ of the theme, what requires editing, design decisions, colours and other aspects
 **Custom Header Image:**
 
 * A custom header image can be added. It will not appear on smaller screens to save space and only appears on the
-  front page.
+  front page. This is largely for the feature image on the Front Page. Set in the Customiser.
 
 **Social Media Icons:**
 
@@ -25,11 +25,14 @@ of the theme, what requires editing, design decisions, colours and other aspects
 * A secondary navigation menu for shorter or custom navigation in the footer. These display inline, so it is recommended
   to make this shorter navigation for more important items.
 
+**Login and Sign Up Buttons:**
+* Login and Sign Up call-to-action buttons are in the header above the navigation bar. 
+* They each need to be set using the customiser under the Button Settings heading. Their corresponding fields are drop-down menus to link to their respective pages.
+
 **All Newsletters:**
 
 * A page created using the **'All Newsletters'** template will display the page title and content at the top, followed
-  by
-  auto-generated content from the single newsletters. It will show the latest newsletter post at the top and an archive
+  by auto-generated content from the single newsletters. It will show the latest newsletter post at the top and an archive
   below listing all past newsletters. The archive is arranged in date order and grouped by the year, with the newest at
   the top.
 
@@ -100,6 +103,11 @@ Enter into the colour.scss variables file. The colours used should be under the 
 colours used in each element should be listed by purpose. This will ensure that changing all site colours can occur from
 a single location.
 
+### Bootstrap
+
+The theme uses a few instances of Bootstrap (specifically the header and navigation). The theme contains the minified Bootstrap
+files which are enqueued within the functions php file.
+
 ## Continued Development
 
 ### New Site Parts
@@ -111,7 +119,7 @@ Any scss that impacts globally across the entire site should be added to the glo
 
 ### Requires Attention
 
-The Google fonts were attempted to be added to the functions.php enqueue, but only the first font would be accessible. A
+The Google fonts were attempted to be added to the functions.php enqueue, but only the first font would be accessible. An
 import statement in the typography file was used to use all fonts, but is not the ideal solution. This requires further
 attention.
 

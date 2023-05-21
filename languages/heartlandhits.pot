@@ -15,7 +15,7 @@ msgstr ""
 "X-Domain: _s\n"
 
 #. Theme Name of the theme
-msgid "_s"
+msgid "heartlandhits"
 msgstr ""
 
 #. Theme URI of the theme

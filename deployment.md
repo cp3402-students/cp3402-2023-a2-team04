@@ -199,7 +199,7 @@ package.json file:
     "compile:rtl": "rtlcss ./css/style.css ./css/style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src ../heartland-hits --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "bundle": "dir-archiver --src ../heartlandhits --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   },
   "main": "index.js"
 }
@@ -246,7 +246,7 @@ is recommended to not run gulp run watch command at the same time.
 2. Set a site name, use the WordPress user and password set up from docker compose, tick box for use of weak password
 3. Select language English (Australia)
 4. Click install/ok
-5. Troubleshooting: If error message appears go to themes and activate heartland-hits theme
+5. Troubleshooting: If error message appears go to themes and activate heartlandhits theme
 6. Create a new browser tab and type localhost:8080 to get PHPMyAdmin login page
 7. Use credentials for database from docker compose file
 
