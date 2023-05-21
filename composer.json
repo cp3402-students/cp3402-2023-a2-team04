@@ -25,8 +25,8 @@
     },
     "scripts": {
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
-        "lint:php": "@php ../heartland-hits/vendor/bin/parallel-lint --exclude .git --exclude vendor .",
-        "make-pot": "wp i18n make-pot ../heartland-hits languages/_s.pot"
+        "lint:php": "@php ../heartlandhits/vendor/bin/parallel-lint --exclude .git --exclude vendor .",
+        "make-pot": "wp i18n make-pot ../heartlandhits languages/_s.pot"
     },
     "support": {
         "issues": "https://github.com/Automattic/_s/issues",
