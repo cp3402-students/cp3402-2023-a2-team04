@@ -31,10 +31,10 @@
             </nav><!-- #site-navigation -->
 
             <div class="author-theme-footer-info">
-            <a href="<?php echo esc_url(__('https://wordpress.org/', 'heartland-hits')); ?>">
+            <a href="<?php echo esc_url(__('https://wordpress.org/', 'heartlandhits')); ?>">
                 <?php
                 /* translators: %s: CMS name, i.e. WordPress. */
-                printf(esc_html__('%s', 'heartland-hits'), 'WordPress');
+                printf(esc_html__('%s', 'heartlandhits'), 'WordPress');
                 ?>
             </a>
             <span class="sep"> | </span>
@@ -42,7 +42,7 @@
             $theme = wp_get_theme();
             $author_uri = $theme->get('AuthorURI');
             $author_name = $theme->get('Author');
-            printf(esc_html__('Theme: %1$s by %2$s.', 'heartland-hits'), 'heartland-hits', '<a href="' . esc_url($author_uri) . '">' . esc_html($author_name) . '</a>');
+            printf(esc_html__('Theme: %1$s by %2$s.', 'heartlandhits'), 'heartlandhits', '<a href="' . esc_url($author_uri) . '">' . esc_html($author_name) . '</a>');
             ?>
             </div>
 

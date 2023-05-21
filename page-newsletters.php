@@ -96,7 +96,7 @@ get_header();
             // Display all previous newsletters
             if ($query->have_posts()) : ?>
 
-                <h2><?php esc_html_e('Archive', 'heartland-hits'); ?></h2>
+                <h2><?php esc_html_e('Archive', 'heartlandhits'); ?></h2>
 
                 <ul class="newsletter-list">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
