@@ -1,0 +1,82 @@
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0;
+	background-color: lighten($color__background-quote, 30%);
+	padding: 1em 2em;
+	text-align: center;
+	font-weight: bold;
+
+	p {
+		margin: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	font-size: 0.5em;
+	@media screen and (min-width: $query__medium){
+		font-size: 1em;
+	}
+	@media screen and (min-width: $query__large){
+		font-size: 2em;
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+	padding: 1em;
+}
+
+pre {
+	background: lighten($color__background-pre, 5%);
+	font-family: $font__pre;
+	line-height: $font__line-height-pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font__code;
+	background-color: lighten($color__background-code, 45%);
+	color: $color__text-code;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted $color__border-abbr;
+	cursor: help;
+	color: $color__text-highlight;
+}
+
+mark,
+ins {
+	background: $color__background-ins;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+q {
+	color: $color__text-highlight;
+	font-weight: bold;
+}

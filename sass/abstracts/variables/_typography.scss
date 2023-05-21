@@ -1,0 +1,24 @@
+// Google fonts - TODO: attempted to add to functions.php enqueue, but unsuccessful; works for first google font only
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Kalam:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:ital,wght@0,300;0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Typography fonts
+// stylelint-disable value-keyword-case
+$font__main: 'Open Sans', Verdana, -apple-system, BlinkMacSystemFont, Helvetica, Tahoma, Roboto, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+// stylelint-enable value-keyword-case
+$font__headings: 'Kalam', 'Fuzzy Bubbles', 'Bradley Hand', cursive;
+$font__variation: Raleway, Verdana, 'Open-Sans', sans-serif;
+$font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: 'Ubuntu Mono', 'Roboto Mono', monospace;
+
+// Font heights
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+// Font sizes
+$font__size_title: 1.5em;
+$font__size_heading: 1.375em;
+$font__size_subheading: 1.25em;
+$font__size_lesser_subheading: 1.125em;
+
+$font__size_body_main: 1em;  // 16px
+$font__size_body_secondary: 0.875em;

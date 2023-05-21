@@ -1,0 +1,74 @@
+// Site Footer
+
+.site-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: $color__background-footer;
+}
+
+.site-info {
+  font-size: $font__size_body_secondary;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+// Social Media Icons
+.fa {
+  padding: 10px;
+  font-size: 1.5em;
+  max-width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+// Remove unwanted social media icons
+.fa-facebook {
+  background: $color__icon-facebook;
+  color: white;
+}
+
+.fa-twitter {
+  background: $color__icon-twitter;
+  color: white;
+}
+
+.fa-youtube {
+  background: $color__icon-youtube;
+  color: white;
+}
+
+.fa-instagram {
+  background: $color__icon-instagram;
+  color: white;
+}
+
+.footer-navigation ul a {
+  color: $color__link;
+}
+
+.author-theme-footer-info {
+  font-size: $font__size_body_secondary;
+  color: $color_grey;
+  a {
+    color: $color_dark_grey;
+    &:visited {
+      color: $color_dark_grey;
+    }
+  }
+}
+
+
+
+
+

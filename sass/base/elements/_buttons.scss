@@ -1,0 +1,48 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 1px solid;
+  border-color: $color__border-button;
+  border-radius: 3px;
+  background: $color__background-button;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding: 0.6em 1em 0.4em;
+
+  &:hover {
+    border-color: $color__border-button-hover;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $color__border-button-focus;
+  }
+}
+
+.wp-block-button {
+  padding: 0.2em;
+
+  .wp-block-button__link {
+    background-color: $color__button-main;
+  }
+}
+
+.is-style-outline {
+  padding: 0.2em;
+}
+
+.wp-block-button .wp-block-button__link.is-style-outline, .wp-block-button.is-style-outline>.wp-block-button__link {
+  border: 2px solid $color__button-main;
+}
+
+.is-style-squared {
+  padding: 0.2em;
+
+  a {
+    background-color: $color__button-main;
+    border-radius: 0;
+  }
+}
+
+

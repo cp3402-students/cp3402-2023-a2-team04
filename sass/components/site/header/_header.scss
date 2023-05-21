@@ -1,0 +1,100 @@
+// Site Header
+.site-header {
+  background-color: $color__background-header;
+  box-shadow: 0 2px 5px #888888;
+}
+
+.header-image {
+  max-height: 60vh;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100vw;
+  }
+  // Hide header image on smaller screens
+  @media screen and (max-width: $query__small){
+    display: none;
+  }
+}
+// Display navigation to side on larger screens
+@media screen and (min-width: $query__large) {
+  .site-navigation {
+    max-width: 40%;
+  }
+}
+
+.header-elements {
+  background-color: $color__background-header;
+  font-family: $font__headings;
+  @media screen and (min-width: $query__small) {
+        padding: 1em 1em;
+      }
+
+  .row {
+
+    .brand-logo {
+      .custom-logo-link {
+        margin-right: 1em;
+
+        img {
+          height: 100px;
+          width: auto;
+        }
+      }
+    }
+
+    .brand-title {
+      .site-title {
+        font-size: $font__size_subheading;
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+
+        a {
+          text-decoration: none;
+          color: $color__heading-dark;
+
+          &:hover, &:focus {
+            color: $color__heading-light;
+          }
+        }
+
+        @media screen and (min-width: $query__small) {
+          font-size: $font__size_heading;
+        }
+      }
+      .site-description {
+          margin: 0;
+          font-size: $font__size_lesser_subheading;
+          padding: 0.1em 0;
+
+          @media screen and (max-width: $query__small) {
+            display: none;
+          }
+        }
+    }
+
+    .left-header-column {
+      text-align: right;
+
+      .btn {
+        background-color: $color_dark_red;
+        border-color: $color_dark_red;
+        color: $color_white;
+      }
+
+      .login-btn {
+        background-color: $color_grey;
+        border-color: $color_grey;
+        color: $color_white;
+      }
+    }
+  }
+}
+
+// TODO: Go to header php and swap the text for a hamburger icon
+.menu-toggle {
+  border-radius: 10px;
+  margin-left: auto;
+}
