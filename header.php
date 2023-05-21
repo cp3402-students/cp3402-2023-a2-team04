@@ -26,7 +26,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text"
-       href="#primary"><?php esc_html_e('Skip to content', 'heartland-hits'); ?></a>
+       href="#primary"><?php esc_html_e('Skip to content', 'heartlandhits'); ?></a>
 
     <header id="masthead" class="site-header">
         <div class="header-elements">
@@ -91,7 +91,7 @@
                         <button class="menu-toggle" aria-controls="primary-menu"
                                 aria-expanded="false">
                             <i class="material-symbols-outlined"></i>
-                            <?php esc_html_e('Menu', 'heartland-hits'); ?>
+                            <?php esc_html_e('Menu', 'heartlandhits'); ?>
                         </button>
                     </div>
 
